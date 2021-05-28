@@ -10,8 +10,8 @@ export const IndexPage = () => {
       <div>{appState.title}</div>
       <div>{appState.message}</div>
 
-      <Button variant="contained" color="primary">
-        Hello World
+      <Button variant="outlined" color="primary">
+        Material Button
       </Button>
     </div>
   );
