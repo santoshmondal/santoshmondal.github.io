@@ -6,12 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 
+import "@fontsource/roboto";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
 import "./index.css";
 import App from "./App";
 import { store } from "./redux/store";
 
 ReactDOM.render(
   <React.StrictMode>
+    <CssBaseline />
     <Provider store={store}>
       <Router>
         <App />
