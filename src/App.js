@@ -1,11 +1,12 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Route, Switch } from "react-router";
+import { IndexPage } from "./components/IndexPage";
 
 function App() {
   return (
-    <div className="beautify">
-      Welcome to My Profile - Santosh Mondal
-    </div>
+    <Switch>
+      <Route exact path="/" component={IndexPage} />
+    </Switch>
   );
 }
 
