@@ -1,5 +1,6 @@
 # GH Pages Steps
 
+- https://create-react-app.dev/docs/deployment/#github-pages
 - Install the Dev Dependency `yarn add gh-pages -D`
 - Update the package.json with following script,
 
@@ -16,6 +17,8 @@
 
 # Useful Links
 
+- Github Pages Setup Link
+  `https://create-react-app.dev/docs/deployment/#github-pages`
 - Enable Emmet in React, JSX, VSCode
   `https://medium.com/@eshwaren/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c`
 
