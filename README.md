@@ -14,6 +14,10 @@
 - Crate Repository at Github with username.github.io,
 - In repository settings, make sure the branch selected is `gh-pages`
 
-# Enable Emmet in React, JSX, VSCode
+# Useful Links
 
-- https://medium.com/@eshwaren/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c
+- Enable Emmet in React, JSX, VSCode
+  `https://medium.com/@eshwaren/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c`
+
+- React Developer Tool Extension
+  `https://extension.remotedev.io/`
