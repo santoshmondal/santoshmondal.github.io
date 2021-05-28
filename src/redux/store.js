@@ -1,4 +1,7 @@
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
 
 const initState = {
   title: "Welcome to My Profile, Santosh Mondal",
@@ -13,5 +16,8 @@ const rootReducer = (state = initState, action) => {
   }
 };
 
-const store = createStore(rootReducer);
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(logger, thunk))
+);
 export { store };
