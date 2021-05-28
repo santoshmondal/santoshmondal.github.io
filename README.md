@@ -1,5 +1,6 @@
 # GH Pages Steps
 
+- https://create-react-app.dev/docs/deployment/#github-pages
 - Install the Dev Dependency `yarn add gh-pages -D`
 - Update the package.json with following script,
 
@@ -13,3 +14,13 @@
 
 - Crate Repository at Github with username.github.io,
 - In repository settings, make sure the branch selected is `gh-pages`
+
+# Useful Links
+
+- Github Pages Setup Link
+  `https://create-react-app.dev/docs/deployment/#github-pages`
+- Enable Emmet in React, JSX, VSCode
+  `https://medium.com/@eshwaren/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c`
+
+- React Developer Tool Extension
+  `https://extension.remotedev.io/`
