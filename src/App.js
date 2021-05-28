@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import { ComingSoon } from "./components/ComingSoon";
+import { ComingSoon } from "./components/DevPage";
 import { IndexPage } from "./components/IndexPage";
 
 function App() {
