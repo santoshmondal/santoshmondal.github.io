@@ -1,9 +1,4 @@
-# README
-
-- Hello This is Santosh Mondal Here.
-- Hello This is Santosh Mondal Here.
-
-# Steps
+# GH Pages Steps
 
 - Install the Dev Dependency `yarn add gh-pages -D`
 - Update the package.json with following script,
