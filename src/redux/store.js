@@ -73,7 +73,7 @@ const initState = {
       ],
     },
     {
-      title: "APP Development",
+      title: "Mobile App",
       subItemList: [
         { subtitle: "Flutter", rating: 4 },
         { subtitle: "React Native", rating: 4 },

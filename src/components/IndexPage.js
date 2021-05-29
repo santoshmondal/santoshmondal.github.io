@@ -6,6 +6,7 @@ import {
   Box,
   Grid,
   Icon,
+  IconButton,
   makeStyles,
   Toolbar,
   Typography,
@@ -14,6 +15,7 @@ import {
 } from "@material-ui/core";
 import { useEffect } from "react";
 import { LensOutlined, LensRounded } from "@material-ui/icons";
+import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,11 +24,6 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     height: "100px",
     backgroundColor: "#333330",
-
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
   },
 }));
 
@@ -52,20 +49,57 @@ export const IndexPage = () => {
     <>
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
-          <Box textAlign="center">
-            <Typography
-              variant={matches ? "h5" : "h5"}
-              style={{ fontWeight: "inherit" }}
-            >
-              {appState.username}
-            </Typography>
-          </Box>
+          <Grid container>
+            <Grid item>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="open drawer"
+              >
+                <MenuIcon />
+              </IconButton>
+            </Grid>
 
-          <Box textAlign="center">
-            <Typography variant={matches ? "body2" : "body1"}>
-              {appState.designation}
-            </Typography>
-          </Box>
+            <Grid item xs>
+              <Box>
+                <Box textAlign="center">
+                  <Typography
+                    variant={matches ? "h5" : "h5"}
+                    style={{ fontWeight: "inherit" }}
+                  >
+                    {appState.username}
+                  </Typography>
+                </Box>
+
+                <Box textAlign="center">
+                  <Typography variant={matches ? "body2" : "body1"}>
+                    {appState.designation}
+                  </Typography>
+                </Box>
+              </Box>
+            </Grid>
+
+            <Grid item>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="open drawer"
+              >
+                <Icon className="fab fa-github" />
+              </IconButton>
+
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="open drawer"
+              >
+                <Icon className="fab fa-linkedin" />
+              </IconButton>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
 
@@ -111,7 +145,7 @@ export const IndexPage = () => {
                         </Box>
                         <Box color="primary.contrastText" display="flex">
                           {[1, 2, 3, 4, 5].map((skillItem, skillIndex) => (
-                            <>
+                            <Box key={skillIndex}>
                               {skillItem <= subitem.rating ? (
                                 <LensRounded
                                   style={{
@@ -129,7 +163,7 @@ export const IndexPage = () => {
                                   }}
                                 />
                               )}
-                            </>
+                            </Box>
                           ))}
                         </Box>
                       </Box>
@@ -185,7 +219,7 @@ export const IndexPage = () => {
                         </Box>
                         <Box color="primary.contrastText" display="flex">
                           {[1, 2, 3, 4, 5].map((skillItem, skillIndex) => (
-                            <>
+                            <Box key={skillIndex}>
                               {skillItem <= subitem.rating ? (
                                 <LensRounded
                                   style={{
@@ -203,7 +237,7 @@ export const IndexPage = () => {
                                   }}
                                 />
                               )}
-                            </>
+                            </Box>
                           ))}
                         </Box>
                       </Box>
