@@ -47,7 +47,7 @@ const initState = {
       ],
     },
     {
-      title: "DATABASE",
+      title: "Database",
       left: true,
       subItemList: [
         { subtitle: "Postgres", rating: 4, icon: "fas fa-database" },
@@ -57,7 +57,7 @@ const initState = {
       ],
     },
     {
-      title: "CLOUD",
+      title: "Cloud",
       left: true,
       subItemList: [
         { subtitle: "AWS", rating: 4, icon: "fab fa-aws" },
