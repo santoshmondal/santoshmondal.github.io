@@ -10,6 +10,10 @@ const initState = {
   username: "Santosh Kumar Mondal",
   designation: "Founder / Product Architect",
 
+  githubUrl: "https://github.com/santoshmondal",
+  linkedinUrl: "https://www.linkedin.com/in/santooindian/",
+  mailTo: "mailto:santosh.ece06@gmail.com",
+
   contactInfo: {
     title: "CONTACT INFO",
     subItemList: [

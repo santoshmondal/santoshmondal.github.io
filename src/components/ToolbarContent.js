@@ -8,12 +8,14 @@ import {
   Icon,
   IconButton,
   makeStyles,
+  Tooltip,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
 import { useEffect } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
+import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,10 +43,21 @@ export const ToolbarContent = () => {
   }, []);
 
   const openExternalLink = (linkType) => {
-    const elink =
-      linkType === 1
-        ? "https://github.com/santoshmondal"
-        : "https://www.linkedin.com/in/santooindian/";
+    let elink = "";
+
+    switch (linkType) {
+      case 1:
+        elink = appState.githubUrl;
+        break;
+      case 2:
+        elink = appState.linkedinUrl;
+        break;
+      case 3:
+        elink = appState.mailTo;
+        break;
+      default:
+        break;
+    }
     window.open(elink);
   };
 
@@ -84,25 +97,41 @@ export const ToolbarContent = () => {
 
       <Hidden smDown>
         <Grid item>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-            onClick={(e) => openExternalLink(1)}
-          >
-            <Icon className="fab fa-github" />
-          </IconButton>
+          <Tooltip title="Email me at santosh.ece06@gmail.com">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="open drawer"
+              onClick={(e) => openExternalLink(3)}
+            >
+              <EmailRoundedIcon />
+            </IconButton>
+          </Tooltip>
 
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-            onClick={(e) => openExternalLink(2)}
-          >
-            <Icon className="fab fa-linkedin" />
-          </IconButton>
+          <Tooltip title="LinkedIn Profile">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="open drawer"
+              onClick={(e) => openExternalLink(2)}
+            >
+              <Icon className="fab fa-linkedin" />
+            </IconButton>
+          </Tooltip>
+
+          <Tooltip title="Github Profile">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="open drawer"
+              onClick={(e) => openExternalLink(1)}
+            >
+              <Icon className="fab fa-github" />
+            </IconButton>
+          </Tooltip>
         </Grid>
       </Hidden>
     </Grid>

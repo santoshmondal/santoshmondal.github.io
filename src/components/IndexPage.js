@@ -1,21 +1,7 @@
-import { useSelector } from "react-redux";
 import { loadCSS } from "fg-loadcss";
 import "./IndexPage.css";
-import {
-  AppBar,
-  Box,
-  Grid,
-  Hidden,
-  Icon,
-  IconButton,
-  makeStyles,
-  Toolbar,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@material-ui/core";
+import { AppBar, Box, Grid, makeStyles, Toolbar } from "@material-ui/core";
 import { useEffect } from "react";
-import MenuIcon from "@material-ui/icons/Menu";
 import { SidebarContent } from "./SidebarContent";
 import { ToolbarContent } from "./ToolbarContent";
 
