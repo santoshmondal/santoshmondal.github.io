@@ -37,6 +37,7 @@ const initState = {
         { subtitle: "NodeJS", rating: 5 },
         { subtitle: "Spring Boot", rating: 5 },
         { subtitle: "MicroServices", rating: 4 },
+        { subtitle: "Python", rating: 3 },
       ],
     },
     {
@@ -46,6 +47,7 @@ const initState = {
         { subtitle: "Postgres", rating: 4 },
         { subtitle: "MongoDB", rating: 4 },
         { subtitle: "Elastic", rating: 4 },
+        { subtitle: "Firestore", rating: 4 },
       ],
     },
     {
@@ -55,6 +57,7 @@ const initState = {
         { subtitle: "AWS", rating: 4 },
         { subtitle: "Firebase", rating: 4 },
         { subtitle: "Google Cloud", rating: 4 },
+        { subtitle: "Mircosoft Azure", rating: 3 },
       ],
     },
 

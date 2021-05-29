@@ -85,9 +85,13 @@ export const IndexPage = () => {
               {[...appState.sideItemList]
                 .filter((fitem) => fitem.left)
                 .map((item, index) => (
-                  <Box key={index} mb={4}>
-                    <Box color="primary.contrastText">
-                      <Typography variant="h6">{item.title}</Typography>
+                  <Box key={index} mb={3}>
+                    <Box
+                      color="primary.contrastText"
+                      fontWeight="bold"
+                      style={{ fontSize: "large" }}
+                    >
+                      {item.title}
                     </Box>
 
                     {[...item.subItemList].map((subitem, index1) => (
@@ -154,9 +158,14 @@ export const IndexPage = () => {
               {[...appState.sideItemList]
                 .filter((fitem) => !fitem.left)
                 .map((item, index) => (
-                  <Box key={index} mb={4}>
-                    <Box color="primary.contrastText">
-                      <Typography variant="h6">{item.title}</Typography>
+                  <Box key={index} mb={3}>
+                    <Box
+                      color="primary.contrastText"
+                      pb={1}
+                      fontWeight="bold"
+                      style={{ fontSize: "large" }}
+                    >
+                      {item.title}
                     </Box>
 
                     {[...item.subItemList].map((subitem, index1) => (
@@ -164,7 +173,7 @@ export const IndexPage = () => {
                         key={index1}
                         display="flex"
                         px={1}
-                        mt={1}
+                        mb={1}
                         justifyContent="space-between"
                         alignItems="center"
                       >
