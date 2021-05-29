@@ -130,60 +130,126 @@ export const IndexPage = () => {
               </Box>
 
               {/** SKILLS LIST */}
-              {[...appState.sideItemList].map((item, index) => (
-                <Box key={index} mb={4}>
-                  <Box color="primary.contrastText">
-                    <Typography variant="h6">{item.title}</Typography>
-                  </Box>
-
-                  {[...item.subItemList].map((subitem, index1) => (
-                    <Box
-                      key={index1}
-                      display="flex"
-                      px={1}
-                      mt={1}
-                      justifyContent="space-between"
-                      alignItems="center"
-                    >
-                      <Box
-                        color="primary.contrastText"
-                        style={{ fontSize: "small" }}
-                      >
-                        {subitem.subtitle}
-                      </Box>
-                      <Box color="primary.contrastText" display="flex">
-                        {[1, 2, 3, 4, 5].map((skillItem, skillIndex) => (
-                          <>
-                            {skillItem <= subitem.rating ? (
-                              <LensRounded
-                                style={{
-                                  color: theme.palette.common.white,
-                                  fontSize: "xx-small",
-                                  marginLeft: "4px",
-                                }}
-                              />
-                            ) : (
-                              <LensOutlined
-                                style={{
-                                  color: theme.palette.common.white,
-                                  fontSize: "xx-small",
-                                  marginLeft: "4px",
-                                }}
-                              />
-                            )}
-                          </>
-                        ))}
-                      </Box>
+              {[...appState.sideItemList]
+                .filter((fitem) => fitem.left)
+                .map((item, index) => (
+                  <Box key={index} mb={4}>
+                    <Box color="primary.contrastText">
+                      <Typography variant="h6">{item.title}</Typography>
                     </Box>
-                  ))}
-                </Box>
-              ))}
+
+                    {[...item.subItemList].map((subitem, index1) => (
+                      <Box
+                        key={index1}
+                        display="flex"
+                        px={1}
+                        mt={1}
+                        justifyContent="space-between"
+                        alignItems="center"
+                      >
+                        <Box
+                          color="primary.contrastText"
+                          style={{ fontSize: "small" }}
+                        >
+                          {subitem.subtitle}
+                        </Box>
+                        <Box color="primary.contrastText" display="flex">
+                          {[1, 2, 3, 4, 5].map((skillItem, skillIndex) => (
+                            <>
+                              {skillItem <= subitem.rating ? (
+                                <LensRounded
+                                  style={{
+                                    color: theme.palette.common.white,
+                                    fontSize: "xx-small",
+                                    marginLeft: "4px",
+                                  }}
+                                />
+                              ) : (
+                                <LensOutlined
+                                  style={{
+                                    color: theme.palette.common.white,
+                                    fontSize: "xx-small",
+                                    marginLeft: "4px",
+                                  }}
+                                />
+                              )}
+                            </>
+                          ))}
+                        </Box>
+                      </Box>
+                    ))}
+                  </Box>
+                ))}
             </Box>
           </Grid>
 
-          {/* Right Body Content */}
-          <Grid item xs={12} md={9}>
-            HElloo Universeee
+          {/* Body Content */}
+          <Grid item xs={12} md={6}>
+            Profile Body
+          </Grid>
+
+          {/* Right  Content */}
+          <Grid item xs={12} md={3}>
+            <Box
+              style={{
+                minHeight: matches ? "calc(100vh - 100px)" : "inherit",
+                backgroundColor: "#3C3C39",
+              }}
+              p={1}
+              px={2}
+            >
+              {/** SKILLS LIST */}
+              {[...appState.sideItemList]
+                .filter((fitem) => !fitem.left)
+                .map((item, index) => (
+                  <Box key={index} mb={4}>
+                    <Box color="primary.contrastText">
+                      <Typography variant="h6">{item.title}</Typography>
+                    </Box>
+
+                    {[...item.subItemList].map((subitem, index1) => (
+                      <Box
+                        key={index1}
+                        display="flex"
+                        px={1}
+                        mt={1}
+                        justifyContent="space-between"
+                        alignItems="center"
+                      >
+                        <Box
+                          color="primary.contrastText"
+                          style={{ fontSize: "small" }}
+                        >
+                          {subitem.subtitle}
+                        </Box>
+                        <Box color="primary.contrastText" display="flex">
+                          {[1, 2, 3, 4, 5].map((skillItem, skillIndex) => (
+                            <>
+                              {skillItem <= subitem.rating ? (
+                                <LensRounded
+                                  style={{
+                                    color: theme.palette.common.white,
+                                    fontSize: "xx-small",
+                                    marginLeft: "4px",
+                                  }}
+                                />
+                              ) : (
+                                <LensOutlined
+                                  style={{
+                                    color: theme.palette.common.white,
+                                    fontSize: "xx-small",
+                                    marginLeft: "4px",
+                                  }}
+                                />
+                              )}
+                            </>
+                          ))}
+                        </Box>
+                      </Box>
+                    ))}
+                  </Box>
+                ))}
+            </Box>
           </Grid>
         </Grid>
       </Box>
