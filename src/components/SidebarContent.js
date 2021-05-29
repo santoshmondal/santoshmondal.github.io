@@ -2,7 +2,7 @@ import { Box, Divider, useMediaQuery, useTheme } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { LensOutlined, LensRounded } from "@material-ui/icons";
 
-export const LeftSidebarContent = () => {
+export const SidebarContent = ({ left }) => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const appState = useSelector((state) => state);
@@ -15,7 +15,7 @@ export const LeftSidebarContent = () => {
     >
       {/** SKILLS LIST */}
       {[...appState.sideItemList]
-        .filter((fitem) => fitem.left)
+        .filter((fitem) => fitem.left === left)
         .map((item, index) => (
           <Box key={index} mb={2}>
             <Box

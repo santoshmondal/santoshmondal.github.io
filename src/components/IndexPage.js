@@ -16,8 +16,7 @@ import {
 } from "@material-ui/core";
 import { useEffect } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
-import { LeftSidebarContent } from "./LeftSidebarContent";
-import { RightSidebarContent } from "./RightSidebarContent";
+import { SidebarContent } from "./SidebarContent";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -122,7 +121,7 @@ export const IndexPage = () => {
         <Grid container>
           {/* Left Body Content */}
           <Grid item xs={12} md={3} style={{ backgroundColor: "#3C3C39" }}>
-            <LeftSidebarContent />
+            <SidebarContent left={true} />
           </Grid>
 
           {/* Body Content */}
@@ -132,7 +131,7 @@ export const IndexPage = () => {
 
           {/* Right  Content */}
           <Grid item xs={12} md={3} style={{ backgroundColor: "#3C3C39" }}>
-            <RightSidebarContent />
+            <SidebarContent />
           </Grid>
         </Grid>
       </Box>
