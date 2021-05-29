@@ -117,7 +117,7 @@ export const IndexPage = () => {
                       )}
 
                       <Box
-                        ml={2}
+                        ml={1}
                         color="primary.contrastText"
                         style={{ fontSize: "small" }}
                       >
