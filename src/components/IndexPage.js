@@ -4,13 +4,13 @@ import {
   AppBar,
   Box,
   Grid,
+  Icon,
   makeStyles,
   Toolbar,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
-import { AccessAlarmRounded } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,34 +59,40 @@ export const IndexPage = () => {
         <Grid container>
           {/* Left Body Content */}
           <Grid item xs={12} md={3}>
-            <Box
-              style={{
-                minHeight: matches ? "calc(100vh - 128px)" : "inherit",
-                backgroundColor: "#3C3C39",
-              }}
-              p={1}
-              px={2}
-            >
-              <Box color="primary.contrastText">
-                <Typography variant="h6">CONTACT INFO</Typography>
-              </Box>
-
-              <Box display="flex" mt={1} alignItems="center">
-                <AccessAlarmRounded
-                  style={{
-                    color: theme.palette.common.white,
-                    fontSize: "large",
-                  }}
-                />
-                <Box
-                  ml={2}
-                  color="primary.contrastText"
-                  style={{ fontSize: "small" }}
-                >
-                  +91-9323791976
+            {[...appState.sideItemList].map((item, index) => (
+              <Box
+                style={{
+                  minHeight: matches ? "calc(100vh - 128px)" : "inherit",
+                  backgroundColor: "#3C3C39",
+                }}
+                p={1}
+                px={2}
+              >
+                <Box color="primary.contrastText">
+                  <Typography variant="h6">{item.title}</Typography>
                 </Box>
+
+                {[...item.subItemList].map((subitem, index1) => (
+                  <Box display="flex" ml={1} mt={1} alignItems="center">
+                    <Icon
+                      style={{
+                        color: theme.palette.common.white,
+                        fontSize: "large",
+                      }}
+                    >
+                      {subitem.icon}
+                    </Icon>
+                    <Box
+                      ml={2}
+                      color="primary.contrastText"
+                      style={{ fontSize: "small" }}
+                    >
+                      {subitem.subtitle}
+                    </Box>
+                  </Box>
+                ))}
               </Box>
-            </Box>
+            ))}
           </Grid>
 
           {/* Right Body Content */}

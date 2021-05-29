@@ -7,6 +7,16 @@ const initState = {
   title: "Welcome to My Profile, Santosh Mondal",
   message: "Work in Progress...!",
   landingTitle: "Landing page title",
+
+  sideItemList: [
+    {
+      title: "CONTACT INFO",
+      subItemList: [
+        { icon: "phone_iphone", subtitle: "+91-9323791976" },
+        { icon: "email", subtitle: "santosh.ece06@gmail.com" },
+      ],
+    },
+  ],
 };
 
 const rootReducer = (state = initState, action) => {
