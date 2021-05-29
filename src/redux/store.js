@@ -32,19 +32,19 @@ const initState = {
     {
       title: "SKILLS BACKEND",
       subItemList: [
-        { subtitle: "Java" },
-        { subtitle: "NodeJS" },
-        { subtitle: "Spring Boot" },
-        { subtitle: "MicroServices" },
+        { subtitle: "Java", rating: 5 },
+        { subtitle: "NodeJS", rating: 5 },
+        { subtitle: "Spring Boot", rating: 5 },
+        { subtitle: "MicroServices", rating: 4 },
       ],
     },
     {
       title: "SKILLS FRONEND",
       subItemList: [
-        { subtitle: "React" },
-        { subtitle: "Redux" },
-        { subtitle: "Anglar" },
-        { subtitle: "Vue" },
+        { subtitle: "React", rating: 5 },
+        { subtitle: "Redux", rating: 5 },
+        { subtitle: "Anglar", rating: 4 },
+        { subtitle: "Vue", rating: 3 },
       ],
     },
   ],

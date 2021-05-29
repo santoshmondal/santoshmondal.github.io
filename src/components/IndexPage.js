@@ -13,6 +13,7 @@ import {
   useTheme,
 } from "@material-ui/core";
 import { useEffect } from "react";
+import { LensOutlined, LensRounded } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -93,7 +94,7 @@ export const IndexPage = () => {
                     <Box
                       key={index1}
                       display="flex"
-                      ml={1}
+                      px={1}
                       mt={1}
                       alignItems="center"
                     >
@@ -119,7 +120,7 @@ export const IndexPage = () => {
                       <Box
                         ml={1}
                         color="primary.contrastText"
-                        style={{ fontSize: "small" }}
+                        style={{ fontSize: "12px" }}
                       >
                         {subitem.subtitle}
                       </Box>
@@ -139,8 +140,9 @@ export const IndexPage = () => {
                     <Box
                       key={index1}
                       display="flex"
-                      ml={1}
+                      px={1}
                       mt={1}
+                      justifyContent="space-between"
                       alignItems="center"
                     >
                       <Box
@@ -148,6 +150,29 @@ export const IndexPage = () => {
                         style={{ fontSize: "small" }}
                       >
                         {subitem.subtitle}
+                      </Box>
+                      <Box color="primary.contrastText" display="flex">
+                        {[1, 2, 3, 4, 5].map((skillItem, skillIndex) => (
+                          <>
+                            {skillItem <= subitem.rating ? (
+                              <LensRounded
+                                style={{
+                                  color: theme.palette.common.white,
+                                  fontSize: "xx-small",
+                                  marginLeft: "4px",
+                                }}
+                              />
+                            ) : (
+                              <LensOutlined
+                                style={{
+                                  color: theme.palette.common.white,
+                                  fontSize: "xx-small",
+                                  marginLeft: "4px",
+                                }}
+                              />
+                            )}
+                          </>
+                        ))}
                       </Box>
                     </Box>
                   ))}
