@@ -17,6 +17,7 @@ import {
 import { useEffect } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { SidebarContent } from "./SidebarContent";
+import { ToolbarContent } from "./ToolbarContent";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,63 +58,7 @@ export const IndexPage = () => {
     <>
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
-          <Grid container>
-            <Hidden smDown>
-              <Grid item>
-                <IconButton
-                  edge="start"
-                  className={classes.menuButton}
-                  color="inherit"
-                  aria-label="open drawer"
-                >
-                  <MenuIcon />
-                </IconButton>
-              </Grid>
-            </Hidden>
-
-            <Grid item xs>
-              <Box>
-                <Box textAlign="center">
-                  <Typography
-                    variant={matches ? "h5" : "h5"}
-                    style={{ fontWeight: "inherit" }}
-                  >
-                    {appState.username}
-                  </Typography>
-                </Box>
-
-                <Box textAlign="center">
-                  <Typography variant={matches ? "body2" : "body1"}>
-                    {appState.designation}
-                  </Typography>
-                </Box>
-              </Box>
-            </Grid>
-
-            <Hidden smDown>
-              <Grid item>
-                <IconButton
-                  edge="start"
-                  className={classes.menuButton}
-                  color="inherit"
-                  aria-label="open drawer"
-                  onClick={(e) => openExternalLink(1)}
-                >
-                  <Icon className="fab fa-github" />
-                </IconButton>
-
-                <IconButton
-                  edge="start"
-                  className={classes.menuButton}
-                  color="inherit"
-                  aria-label="open drawer"
-                  onClick={(e) => openExternalLink(2)}
-                >
-                  <Icon className="fab fa-linkedin" />
-                </IconButton>
-              </Grid>
-            </Hidden>
-          </Grid>
+          <ToolbarContent></ToolbarContent>
         </Toolbar>
       </AppBar>
 
