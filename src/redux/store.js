@@ -7,6 +7,8 @@ const initState = {
   title: "Welcome to My Profile, Santosh Mondal",
   message: "Work in Progress...!",
   landingTitle: "Landing page title",
+  username: "Santosh Kumar Mondal",
+  designation: "Founder / Product Architect",
 
   contactInfo: {
     title: "CONTACT INFO",

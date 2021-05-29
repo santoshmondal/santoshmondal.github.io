@@ -57,13 +57,13 @@ export const IndexPage = () => {
               variant={matches ? "h5" : "h5"}
               style={{ fontWeight: "inherit" }}
             >
-              Santosh Kumar Mondal
+              {appState.username}
             </Typography>
           </Box>
 
           <Box textAlign="center">
-            <Typography variant={matches ? "body1" : "body1"}>
-              Founder / Product Architect
+            <Typography variant={matches ? "body2" : "body1"}>
+              {appState.designation}
             </Typography>
           </Box>
         </Toolbar>
