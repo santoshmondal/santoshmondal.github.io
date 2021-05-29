@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { loadCSS } from "fg-loadcss";
 import "./IndexPage.css";
 import {
   AppBar,
@@ -11,6 +12,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
+import { useEffect } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +35,17 @@ export const IndexPage = () => {
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   console.log(theme);
   const appState = useSelector((state) => state);
+
+  useEffect(() => {
+    const node = loadCSS(
+      "https://use.fontawesome.com/releases/v5.12.0/css/all.css",
+      document.querySelector("#font-awesome-css")
+    );
+
+    return () => {
+      node.parentNode.removeChild(node);
+    };
+  }, []);
 
   return (
     <>
@@ -75,13 +88,13 @@ export const IndexPage = () => {
                 {[...item.subItemList].map((subitem, index1) => (
                   <Box display="flex" ml={1} mt={1} alignItems="center">
                     <Icon
+                      className={subitem.icon}
                       style={{
                         color: theme.palette.common.white,
                         fontSize: "large",
                       }}
-                    >
-                      {subitem.icon}
-                    </Icon>
+                    />
+
                     <Box
                       ml={2}
                       color="primary.contrastText"

@@ -12,8 +12,21 @@ const initState = {
     {
       title: "CONTACT INFO",
       subItemList: [
-        { icon: "phone_iphone", subtitle: "+91-9323791976" },
-        { icon: "email", subtitle: "santosh.ece06@gmail.com" },
+        {
+          icon: "fas fa-mobile-alt",
+          subtitle: "+91-9323791976",
+          material: true,
+        },
+        {
+          icon: "fas fa-envelope",
+          subtitle: "santosh.ece06@gmail.com",
+          material: true,
+        },
+        { icon: "fab fa-github", subtitle: "https://github.com/santoshmondal" },
+        {
+          icon: "fab fa-linkedin",
+          subtitle: "https://www.linkedin.com/in/santooindian/",
+        },
       ],
     },
   ],
