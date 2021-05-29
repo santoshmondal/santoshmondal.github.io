@@ -13,12 +13,12 @@ const initState = {
       title: "CONTACT INFO",
       subItemList: [
         {
-          icon: "fas fa-mobile-alt",
+          icon: "phone_iphone",
           subtitle: "+91-9323791976",
           material: true,
         },
         {
-          icon: "fas fa-envelope",
+          icon: "email",
           subtitle: "santosh.ece06@gmail.com",
           material: true,
         },

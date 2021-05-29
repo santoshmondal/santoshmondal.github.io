@@ -87,13 +87,24 @@ export const IndexPage = () => {
 
                 {[...item.subItemList].map((subitem, index1) => (
                   <Box display="flex" ml={1} mt={1} alignItems="center">
-                    <Icon
-                      className={subitem.icon}
-                      style={{
-                        color: theme.palette.common.white,
-                        fontSize: "large",
-                      }}
-                    />
+                    {subitem.material ? (
+                      <Icon
+                        style={{
+                          color: theme.palette.common.white,
+                          fontSize: "large",
+                        }}
+                      >
+                        {subitem.icon}
+                      </Icon>
+                    ) : (
+                      <Icon
+                        className={subitem.icon}
+                        style={{
+                          color: theme.palette.common.white,
+                          fontSize: "large",
+                        }}
+                      />
+                    )}
 
                     <Box
                       ml={2}
