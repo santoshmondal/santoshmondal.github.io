@@ -122,12 +122,9 @@ export const IndexPage = () => {
       <Box>
         <Grid container>
           {/* Left Body Content */}
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={3} style={{ backgroundColor: "#3C3C39" }}>
             <Box
-              style={{
-                minHeight: matches ? "calc(100vh - 100px)" : "inherit",
-                backgroundColor: "#3C3C39",
-              }}
+              style={{ minHeight: matches ? "calc(100vh - 100px)" : "inherit" }}
               p={1}
               px={2}
             >
@@ -199,12 +196,9 @@ export const IndexPage = () => {
           </Grid>
 
           {/* Right  Content */}
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={3} style={{ backgroundColor: "#3C3C39" }}>
             <Box
-              style={{
-                minHeight: matches ? "calc(100vh - 100px)" : "inherit",
-                backgroundColor: "#3C3C39",
-              }}
+              style={{ minHeight: matches ? "calc(100vh - 100px)" : "inherit" }}
               p={1}
               px={2}
             >
