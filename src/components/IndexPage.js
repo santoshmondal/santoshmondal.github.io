@@ -5,6 +5,7 @@ import {
   AppBar,
   Box,
   Grid,
+  Hidden,
   Icon,
   IconButton,
   makeStyles,
@@ -50,16 +51,18 @@ export const IndexPage = () => {
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
           <Grid container>
-            <Grid item>
-              <IconButton
-                edge="start"
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="open drawer"
-              >
-                <MenuIcon />
-              </IconButton>
-            </Grid>
+            <Hidden smDown>
+              <Grid item>
+                <IconButton
+                  edge="start"
+                  className={classes.menuButton}
+                  color="inherit"
+                  aria-label="open drawer"
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Grid>
+            </Hidden>
 
             <Grid item xs>
               <Box>
@@ -80,25 +83,27 @@ export const IndexPage = () => {
               </Box>
             </Grid>
 
-            <Grid item>
-              <IconButton
-                edge="start"
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="open drawer"
-              >
-                <Icon className="fab fa-github" />
-              </IconButton>
+            <Hidden smDown>
+              <Grid item>
+                <IconButton
+                  edge="start"
+                  className={classes.menuButton}
+                  color="inherit"
+                  aria-label="open drawer"
+                >
+                  <Icon className="fab fa-github" />
+                </IconButton>
 
-              <IconButton
-                edge="start"
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="open drawer"
-              >
-                <Icon className="fab fa-linkedin" />
-              </IconButton>
-            </Grid>
+                <IconButton
+                  edge="start"
+                  className={classes.menuButton}
+                  color="inherit"
+                  aria-label="open drawer"
+                >
+                  <Icon className="fab fa-linkedin" />
+                </IconButton>
+              </Grid>
+            </Hidden>
           </Grid>
         </Toolbar>
       </AppBar>
