@@ -4,6 +4,7 @@ import { AppBar, Box, Grid, makeStyles, Toolbar } from "@material-ui/core";
 import { useEffect } from "react";
 import { SidebarContent } from "./SidebarContent";
 import { ToolbarContent } from "./ToolbarContent";
+import { ProfileBodyContent } from "./ProfileBodyConent";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,7 +50,7 @@ export const IndexPage = () => {
 
           {/* Body Content */}
           <Grid item xs={12} md={6}>
-            Profile Body
+            <ProfileBodyContent />
           </Grid>
 
           {/* Right  Content */}
