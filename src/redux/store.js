@@ -39,11 +39,11 @@ const initState = {
       title: "SKILLS BACKEND",
       left: true,
       subItemList: [
-        { subtitle: "Java", rating: 5 },
-        { subtitle: "NodeJS", rating: 5 },
-        { subtitle: "Spring Boot", rating: 5 },
-        { subtitle: "MicroServices", rating: 4 },
-        { subtitle: "Python", rating: 3 },
+        { subtitle: "Java", rating: 5, icon: "fab fa-java" },
+        { subtitle: "NodeJS", rating: 5, icon: "fab fa-node" },
+        { subtitle: "Spring Boot", rating: 5, icon: "fas fa-leaf" },
+        { subtitle: "MicroServices", rating: 4, icon: "fas fa-network-wired" },
+        { subtitle: "Python", rating: 3, icon: "fab fa-python" },
       ],
     },
     {

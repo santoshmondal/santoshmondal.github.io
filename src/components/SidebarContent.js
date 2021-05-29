@@ -1,4 +1,4 @@
-import { Box, Divider, useMediaQuery, useTheme } from "@material-ui/core";
+import { Box, Divider, Icon, useMediaQuery, useTheme } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { LensOutlined, LensRounded } from "@material-ui/icons";
 
@@ -35,8 +35,21 @@ export const SidebarContent = ({ left }) => {
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <Box color="primary.contrastText" style={{ fontSize: "small" }}>
-                  {subitem.subtitle}
+                <Box display="flex" alignItems="center">
+                  <Icon
+                    className={subitem.icon}
+                    style={{
+                      color: theme.palette.common.white,
+                      fontSize: "small",
+                    }}
+                  />
+                  <Box
+                    ml={1}
+                    color="primary.contrastText"
+                    style={{ fontSize: "small" }}
+                  >
+                    {subitem.subtitle}
+                  </Box>
                 </Box>
                 <Box color="primary.contrastText" display="flex">
                   {[1, 2, 3, 4, 5].map((skillItem, skillIndex) => (
