@@ -1,25 +1,36 @@
 import { useSelector } from "react-redux";
 import "./IndexPage.css";
 import Button from "@material-ui/core/Button";
-import { Box, Icon } from "@material-ui/core";
+import { Box, Grid, Icon, Typography, useTheme } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import SendIcon from "@material-ui/icons/Send";
 
 export const IndexPage = () => {
   const appState = useSelector((state) => state);
+  const theme = useTheme();
 
   return (
-    <div className="beautify">
-      <Box mb>
-        <Alert severity="info">{appState.title}</Alert>
-      </Box>
-      <Box mb>
-        <Alert severity="success">{appState.message}</Alert>
+    <Box display="flex" flexDirection="column" style={{ height: "100vh" }}>
+      <Box
+        color={theme.palette.common.white}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        height={1 / 6}
+        style={{ backgroundColor: "#333330" }}
+      >
+        <Typography>
+          <Box>Santosh Mondal</Box>
+        </Typography>
+        <Typography>
+          <Box>FOUNDER / PRODUCT ARCHITECT</Box>
+        </Typography>
       </Box>
 
-      <Button variant="outlined" size="large" endIcon={<SendIcon />}>
-        Check Out
-      </Button>
-    </div>
+      <Grid container>
+        <Grid item>Container 2</Grid>
+      </Grid>
+    </Box>
   );
 };
