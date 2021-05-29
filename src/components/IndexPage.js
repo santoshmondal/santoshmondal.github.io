@@ -47,6 +47,14 @@ export const IndexPage = () => {
     };
   }, []);
 
+  const openExternalLink = (linkType) => {
+    const elink =
+      linkType === 1
+        ? "https://github.com/santoshmondal"
+        : "https://www.linkedin.com/in/santooindian/";
+    window.open(elink);
+  };
+
   return (
     <>
       <AppBar position="static">
@@ -91,6 +99,7 @@ export const IndexPage = () => {
                   className={classes.menuButton}
                   color="inherit"
                   aria-label="open drawer"
+                  onClick={(e) => openExternalLink(1)}
                 >
                   <Icon className="fab fa-github" />
                 </IconButton>
@@ -100,6 +109,7 @@ export const IndexPage = () => {
                   className={classes.menuButton}
                   color="inherit"
                   aria-label="open drawer"
+                  onClick={(e) => openExternalLink(2)}
                 >
                   <Icon className="fab fa-linkedin" />
                 </IconButton>
