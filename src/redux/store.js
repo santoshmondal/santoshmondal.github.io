@@ -31,6 +31,7 @@ const initState = {
   sideItemList: [
     {
       title: "SKILLS BACKEND",
+      left: true,
       subItemList: [
         { subtitle: "Java", rating: 5 },
         { subtitle: "NodeJS", rating: 5 },
@@ -39,12 +40,55 @@ const initState = {
       ],
     },
     {
+      title: "SKILLS DATABASE",
+      left: true,
+      subItemList: [
+        { subtitle: "Postgres", rating: 4 },
+        { subtitle: "MongoDB", rating: 4 },
+        { subtitle: "Elastic", rating: 4 },
+      ],
+    },
+    {
+      title: "CLOUD",
+      left: true,
+      subItemList: [
+        { subtitle: "AWS", rating: 4 },
+        { subtitle: "Firebase", rating: 4 },
+        { subtitle: "Google Cloud", rating: 4 },
+      ],
+    },
+
+    {
       title: "SKILLS FRONEND",
       subItemList: [
         { subtitle: "React", rating: 5 },
         { subtitle: "Redux", rating: 5 },
         { subtitle: "Anglar", rating: 4 },
         { subtitle: "Vue", rating: 3 },
+      ],
+    },
+    {
+      title: "APP Development",
+      subItemList: [
+        { subtitle: "Flutter", rating: 4 },
+        { subtitle: "React Native", rating: 4 },
+        { subtitle: "Kotlin", rating: 4 },
+      ],
+    },
+    {
+      title: "UI/UX",
+      subItemList: [
+        { subtitle: "Material", rating: 5 },
+        { subtitle: "Bootstrap", rating: 5 },
+        { subtitle: "Tailwind", rating: 4 },
+      ],
+    },
+    {
+      title: "Devops",
+      subItemList: [
+        { subtitle: "Docker", rating: 5 },
+        { subtitle: "Jenkins", rating: 4 },
+        { subtitle: "Github Action", rating: 4 },
       ],
     },
   ],

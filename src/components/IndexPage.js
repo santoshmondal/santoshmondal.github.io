@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
   },
   toolbar: {
-    height: "128px",
+    height: "100px",
     backgroundColor: "#333330",
 
     display: "flex",
@@ -54,7 +54,7 @@ export const IndexPage = () => {
         <Toolbar className={classes.toolbar}>
           <Box textAlign="center">
             <Typography
-              variant={matches ? "h4" : "h5"}
+              variant={matches ? "h5" : "h5"}
               style={{ fontWeight: "inherit" }}
             >
               Santosh Kumar Mondal
@@ -62,7 +62,7 @@ export const IndexPage = () => {
           </Box>
 
           <Box textAlign="center">
-            <Typography variant={matches ? "h6" : "body1"}>
+            <Typography variant={matches ? "body1" : "body1"}>
               Founder / Product Architect
             </Typography>
           </Box>
@@ -75,7 +75,7 @@ export const IndexPage = () => {
           <Grid item xs={12} md={3}>
             <Box
               style={{
-                minHeight: matches ? "calc(100vh - 128px)" : "inherit",
+                minHeight: matches ? "calc(100vh - 100px)" : "inherit",
                 backgroundColor: "#3C3C39",
               }}
               p={1}
