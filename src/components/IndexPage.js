@@ -53,6 +53,10 @@ export const IndexPage = () => {
           </Box>
         </Toolbar>
       </AppBar>
+
+      <Box style={{ height: "calc(100vh - 128px)" }} bgcolor="primary.main">
+        Hello World
+      </Box>
     </>
   );
 };
