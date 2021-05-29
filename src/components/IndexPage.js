@@ -81,54 +81,6 @@ export const IndexPage = () => {
               p={1}
               px={2}
             >
-              {/* Contact Info */}
-              <Box mb={4}>
-                <Box color="primary.contrastText">
-                  <Typography variant="h6">
-                    {appState.contactInfo.title}
-                  </Typography>
-                </Box>
-
-                {[...appState.contactInfo.subItemList].map(
-                  (subitem, index1) => (
-                    <Box
-                      key={index1}
-                      display="flex"
-                      px={1}
-                      mt={1}
-                      alignItems="center"
-                    >
-                      {subitem.material ? (
-                        <Icon
-                          style={{
-                            color: theme.palette.common.white,
-                            fontSize: "large",
-                          }}
-                        >
-                          {subitem.icon}
-                        </Icon>
-                      ) : (
-                        <Icon
-                          className={subitem.icon}
-                          style={{
-                            color: theme.palette.common.white,
-                            fontSize: "large",
-                          }}
-                        />
-                      )}
-
-                      <Box
-                        ml={1}
-                        color="primary.contrastText"
-                        style={{ fontSize: "12px" }}
-                      >
-                        {subitem.subtitle}
-                      </Box>
-                    </Box>
-                  )
-                )}
-              </Box>
-
               {/** SKILLS LIST */}
               {[...appState.sideItemList]
                 .filter((fitem) => fitem.left)

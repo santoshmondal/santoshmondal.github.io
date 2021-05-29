@@ -40,7 +40,7 @@ const initState = {
       ],
     },
     {
-      title: "SKILLS DATABASE",
+      title: "DATABASE",
       left: true,
       subItemList: [
         { subtitle: "Postgres", rating: 4 },
