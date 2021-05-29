@@ -10,6 +10,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
+import { AccessAlarmRounded } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,8 +55,45 @@ export const IndexPage = () => {
         </Toolbar>
       </AppBar>
 
-      <Box style={{ height: "calc(100vh - 128px)" }} bgcolor="primary.main">
-        Hello World
+      <Box>
+        <Grid container>
+          {/* Left Body Content */}
+          <Grid item xs={12} md={3}>
+            <Box
+              style={{
+                minHeight: matches ? "calc(100vh - 128px)" : "inherit",
+                backgroundColor: "#3C3C39",
+              }}
+              p={1}
+              px={2}
+            >
+              <Box color="primary.contrastText">
+                <Typography variant="h6">CONTACT INFO</Typography>
+              </Box>
+
+              <Box display="flex" mt={1} alignItems="center">
+                <AccessAlarmRounded
+                  style={{
+                    color: theme.palette.common.white,
+                    fontSize: "large",
+                  }}
+                />
+                <Box
+                  ml={2}
+                  color="primary.contrastText"
+                  style={{ fontSize: "small" }}
+                >
+                  +91-9323791976
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
+
+          {/* Right Body Content */}
+          <Grid item xs={12} md={9}>
+            HElloo Universeee
+          </Grid>
+        </Grid>
       </Box>
     </>
   );
