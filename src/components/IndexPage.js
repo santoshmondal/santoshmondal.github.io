@@ -31,9 +31,6 @@ const useStyles = makeStyles((theme) => ({
 
 export const IndexPage = () => {
   const classes = useStyles();
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("sm"));
-  const appState = useSelector((state) => state);
 
   useEffect(() => {
     const node = loadCSS(
@@ -45,14 +42,6 @@ export const IndexPage = () => {
       node.parentNode.removeChild(node);
     };
   }, []);
-
-  const openExternalLink = (linkType) => {
-    const elink =
-      linkType === 1
-        ? "https://github.com/santoshmondal"
-        : "https://www.linkedin.com/in/santooindian/";
-    window.open(elink);
-  };
 
   return (
     <>
