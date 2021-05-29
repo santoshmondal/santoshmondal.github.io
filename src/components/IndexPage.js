@@ -4,6 +4,7 @@ import "./IndexPage.css";
 import {
   AppBar,
   Box,
+  Divider,
   Grid,
   Hidden,
   Icon,
@@ -124,7 +125,7 @@ export const IndexPage = () => {
               {[...appState.sideItemList]
                 .filter((fitem) => fitem.left)
                 .map((item, index) => (
-                  <Box key={index} mb={3}>
+                  <Box key={index} mb={2}>
                     <Box
                       color="primary.contrastText"
                       fontWeight="bold"
@@ -173,6 +174,10 @@ export const IndexPage = () => {
                         </Box>
                       </Box>
                     ))}
+
+                    <Box mt={1}>
+                      <Divider></Divider>
+                    </Box>
                   </Box>
                 ))}
             </Box>
@@ -197,7 +202,7 @@ export const IndexPage = () => {
               {[...appState.sideItemList]
                 .filter((fitem) => !fitem.left)
                 .map((item, index) => (
-                  <Box key={index} mb={3}>
+                  <Box key={index} mb={2}>
                     <Box
                       color="primary.contrastText"
                       pb={1}
@@ -247,6 +252,10 @@ export const IndexPage = () => {
                         </Box>
                       </Box>
                     ))}
+
+                    <Box mt={1}>
+                      <Divider></Divider>
+                    </Box>
                   </Box>
                 ))}
             </Box>
