@@ -1,4 +1,4 @@
-import { Box, makeStyles, useTheme } from "@material-ui/core";
+import { Box, Divider, makeStyles, useTheme } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import "./IndexPage.css";
 
@@ -18,9 +18,15 @@ export const DevPage = () => {
       <Box className={classes.root} p={2} borderRadius={4} fontWeight="bolder">
         Dev And Testing
       </Box>
+
       <Box mb={1}>
         <Alert severity="info">This is an info alert — check it out!</Alert>
       </Box>
+
+      <Box fontSize="medium">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
+      </Box>
+      <Divider />
 
       <Box mb={1}>
         <Alert severity="success">
