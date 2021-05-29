@@ -4,6 +4,8 @@ object-assign
 @license MIT
 */
 
+/*! loadCSS. [c]2020 Filament Group, Inc. MIT License */
+
 /**
  * A better abstraction over CSS.
  *
