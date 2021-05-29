@@ -64,7 +64,7 @@ const initState = {
     },
 
     {
-      title: "SKILLS FRONEND",
+      title: "SKILLS FRONTEND",
       subItemList: [
         { subtitle: "React", rating: 5 },
         { subtitle: "Redux", rating: 5 },

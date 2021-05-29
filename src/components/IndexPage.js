@@ -4,7 +4,6 @@ import "./IndexPage.css";
 import {
   AppBar,
   Box,
-  Divider,
   Grid,
   Hidden,
   Icon,
@@ -16,8 +15,9 @@ import {
   useTheme,
 } from "@material-ui/core";
 import { useEffect } from "react";
-import { LensOutlined, LensRounded } from "@material-ui/icons";
 import MenuIcon from "@material-ui/icons/Menu";
+import { LeftSidebarContent } from "./LeftSidebarContent";
+import { RightSidebarContent } from "./RightSidebarContent";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +33,6 @@ export const IndexPage = () => {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
-  console.log(theme);
   const appState = useSelector((state) => state);
 
   useEffect(() => {
@@ -123,71 +122,7 @@ export const IndexPage = () => {
         <Grid container>
           {/* Left Body Content */}
           <Grid item xs={12} md={3} style={{ backgroundColor: "#3C3C39" }}>
-            <Box
-              style={{ minHeight: matches ? "calc(100vh - 100px)" : "inherit" }}
-              p={1}
-              px={2}
-            >
-              {/** SKILLS LIST */}
-              {[...appState.sideItemList]
-                .filter((fitem) => fitem.left)
-                .map((item, index) => (
-                  <Box key={index} mb={2}>
-                    <Box
-                      color="primary.contrastText"
-                      fontWeight="bold"
-                      style={{ fontSize: "large" }}
-                    >
-                      {item.title}
-                    </Box>
-
-                    {[...item.subItemList].map((subitem, index1) => (
-                      <Box
-                        key={index1}
-                        display="flex"
-                        px={1}
-                        mt={1}
-                        justifyContent="space-between"
-                        alignItems="center"
-                      >
-                        <Box
-                          color="primary.contrastText"
-                          style={{ fontSize: "small" }}
-                        >
-                          {subitem.subtitle}
-                        </Box>
-                        <Box color="primary.contrastText" display="flex">
-                          {[1, 2, 3, 4, 5].map((skillItem, skillIndex) => (
-                            <Box key={skillIndex}>
-                              {skillItem <= subitem.rating ? (
-                                <LensRounded
-                                  style={{
-                                    color: theme.palette.common.white,
-                                    fontSize: "xx-small",
-                                    marginLeft: "4px",
-                                  }}
-                                />
-                              ) : (
-                                <LensOutlined
-                                  style={{
-                                    color: theme.palette.common.white,
-                                    fontSize: "xx-small",
-                                    marginLeft: "4px",
-                                  }}
-                                />
-                              )}
-                            </Box>
-                          ))}
-                        </Box>
-                      </Box>
-                    ))}
-
-                    <Box mt={1}>
-                      <Divider></Divider>
-                    </Box>
-                  </Box>
-                ))}
-            </Box>
+            <LeftSidebarContent />
           </Grid>
 
           {/* Body Content */}
@@ -197,72 +132,7 @@ export const IndexPage = () => {
 
           {/* Right  Content */}
           <Grid item xs={12} md={3} style={{ backgroundColor: "#3C3C39" }}>
-            <Box
-              style={{ minHeight: matches ? "calc(100vh - 100px)" : "inherit" }}
-              p={1}
-              px={2}
-            >
-              {/** SKILLS LIST */}
-              {[...appState.sideItemList]
-                .filter((fitem) => !fitem.left)
-                .map((item, index) => (
-                  <Box key={index} mb={2}>
-                    <Box
-                      color="primary.contrastText"
-                      pb={1}
-                      fontWeight="bold"
-                      style={{ fontSize: "large" }}
-                    >
-                      {item.title}
-                    </Box>
-
-                    {[...item.subItemList].map((subitem, index1) => (
-                      <Box
-                        key={index1}
-                        display="flex"
-                        px={1}
-                        mb={1}
-                        justifyContent="space-between"
-                        alignItems="center"
-                      >
-                        <Box
-                          color="primary.contrastText"
-                          style={{ fontSize: "small" }}
-                        >
-                          {subitem.subtitle}
-                        </Box>
-                        <Box color="primary.contrastText" display="flex">
-                          {[1, 2, 3, 4, 5].map((skillItem, skillIndex) => (
-                            <Box key={skillIndex}>
-                              {skillItem <= subitem.rating ? (
-                                <LensRounded
-                                  style={{
-                                    color: theme.palette.common.white,
-                                    fontSize: "xx-small",
-                                    marginLeft: "4px",
-                                  }}
-                                />
-                              ) : (
-                                <LensOutlined
-                                  style={{
-                                    color: theme.palette.common.white,
-                                    fontSize: "xx-small",
-                                    marginLeft: "4px",
-                                  }}
-                                />
-                              )}
-                            </Box>
-                          ))}
-                        </Box>
-                      </Box>
-                    ))}
-
-                    <Box mt={1}>
-                      <Divider></Divider>
-                    </Box>
-                  </Box>
-                ))}
-            </Box>
+            <RightSidebarContent />
           </Grid>
         </Grid>
       </Box>
