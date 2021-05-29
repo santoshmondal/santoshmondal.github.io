@@ -72,51 +72,88 @@ export const IndexPage = () => {
         <Grid container>
           {/* Left Body Content */}
           <Grid item xs={12} md={3}>
-            {[...appState.sideItemList].map((item, index) => (
-              <Box
-                style={{
-                  minHeight: matches ? "calc(100vh - 128px)" : "inherit",
-                  backgroundColor: "#3C3C39",
-                }}
-                p={1}
-                px={2}
-              >
+            <Box
+              style={{
+                minHeight: matches ? "calc(100vh - 128px)" : "inherit",
+                backgroundColor: "#3C3C39",
+              }}
+              p={1}
+              px={2}
+            >
+              {/* Contact Info */}
+              <Box mb={4}>
                 <Box color="primary.contrastText">
-                  <Typography variant="h6">{item.title}</Typography>
+                  <Typography variant="h6">
+                    {appState.contactInfo.title}
+                  </Typography>
                 </Box>
 
-                {[...item.subItemList].map((subitem, index1) => (
-                  <Box display="flex" ml={1} mt={1} alignItems="center">
-                    {subitem.material ? (
-                      <Icon
-                        style={{
-                          color: theme.palette.common.white,
-                          fontSize: "large",
-                        }}
-                      >
-                        {subitem.icon}
-                      </Icon>
-                    ) : (
-                      <Icon
-                        className={subitem.icon}
-                        style={{
-                          color: theme.palette.common.white,
-                          fontSize: "large",
-                        }}
-                      />
-                    )}
-
+                {[...appState.contactInfo.subItemList].map(
+                  (subitem, index1) => (
                     <Box
-                      ml={2}
-                      color="primary.contrastText"
-                      style={{ fontSize: "small" }}
+                      key={index1}
+                      display="flex"
+                      ml={1}
+                      mt={1}
+                      alignItems="center"
                     >
-                      {subitem.subtitle}
+                      {subitem.material ? (
+                        <Icon
+                          style={{
+                            color: theme.palette.common.white,
+                            fontSize: "large",
+                          }}
+                        >
+                          {subitem.icon}
+                        </Icon>
+                      ) : (
+                        <Icon
+                          className={subitem.icon}
+                          style={{
+                            color: theme.palette.common.white,
+                            fontSize: "large",
+                          }}
+                        />
+                      )}
+
+                      <Box
+                        ml={2}
+                        color="primary.contrastText"
+                        style={{ fontSize: "small" }}
+                      >
+                        {subitem.subtitle}
+                      </Box>
                     </Box>
-                  </Box>
-                ))}
+                  )
+                )}
               </Box>
-            ))}
+
+              {/** SKILLS LIST */}
+              {[...appState.sideItemList].map((item, index) => (
+                <Box key={index} mb={4}>
+                  <Box color="primary.contrastText">
+                    <Typography variant="h6">{item.title}</Typography>
+                  </Box>
+
+                  {[...item.subItemList].map((subitem, index1) => (
+                    <Box
+                      key={index1}
+                      display="flex"
+                      ml={1}
+                      mt={1}
+                      alignItems="center"
+                    >
+                      <Box
+                        color="primary.contrastText"
+                        style={{ fontSize: "small" }}
+                      >
+                        {subitem.subtitle}
+                      </Box>
+                    </Box>
+                  ))}
+                </Box>
+              ))}
+            </Box>
           </Grid>
 
           {/* Right Body Content */}

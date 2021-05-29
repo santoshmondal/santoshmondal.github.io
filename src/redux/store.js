@@ -8,25 +8,43 @@ const initState = {
   message: "Work in Progress...!",
   landingTitle: "Landing page title",
 
+  contactInfo: {
+    title: "CONTACT INFO",
+    subItemList: [
+      {
+        icon: "phone_iphone",
+        subtitle: "+91-9323791976",
+        material: true,
+      },
+      {
+        icon: "email",
+        subtitle: "santosh.ece06@gmail.com",
+        material: true,
+      },
+      { icon: "fab fa-github", subtitle: "https://github.com/santoshmondal" },
+      {
+        icon: "fab fa-linkedin",
+        subtitle: "https://www.linkedin.com/in/santooindian/",
+      },
+    ],
+  },
   sideItemList: [
     {
-      title: "CONTACT INFO",
+      title: "SKILLS BACKEND",
       subItemList: [
-        {
-          icon: "phone_iphone",
-          subtitle: "+91-9323791976",
-          material: true,
-        },
-        {
-          icon: "email",
-          subtitle: "santosh.ece06@gmail.com",
-          material: true,
-        },
-        { icon: "fab fa-github", subtitle: "https://github.com/santoshmondal" },
-        {
-          icon: "fab fa-linkedin",
-          subtitle: "https://www.linkedin.com/in/santooindian/",
-        },
+        { subtitle: "Java" },
+        { subtitle: "NodeJS" },
+        { subtitle: "Spring Boot" },
+        { subtitle: "MicroServices" },
+      ],
+    },
+    {
+      title: "SKILLS FRONEND",
+      subItemList: [
+        { subtitle: "React" },
+        { subtitle: "Redux" },
+        { subtitle: "Anglar" },
+        { subtitle: "Vue" },
       ],
     },
   ],
