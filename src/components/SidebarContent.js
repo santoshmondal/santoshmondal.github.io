@@ -41,11 +41,19 @@ export const SidebarContent = ({ left }) => {
                     <Box key={skillIndex}>
                       {skillItem <= subitem.rating ? (
                         <LensRounded
-                          style={{ fontSize: "xx-small", marginLeft: "4px" }}
+                          style={{
+                            fontSize: "xx-small",
+                            marginLeft: "4px",
+                            opacity: ".75",
+                          }}
                         />
                       ) : (
                         <LensOutlined
-                          style={{ fontSize: "xx-small", marginLeft: "4px" }}
+                          style={{
+                            fontSize: "xx-small",
+                            marginLeft: "4px",
+                            opacity: ".75",
+                          }}
                         />
                       )}
                     </Box>

@@ -62,6 +62,7 @@ export const ToolbarContent = () => {
         edge="start"
         className={classes.menuButton}
         color="inherit"
+        style={{ opacity: "0.85" }}
         aria-label="open drawer"
       >
         <MenuIcon />
@@ -105,6 +106,7 @@ export const ToolbarContent = () => {
             edge="start"
             color="inherit"
             aria-label="mail to"
+            style={{ opacity: "0.85" }}
             onClick={(e) => openExternalLink(3)}
           >
             <EmailRoundedIcon />
@@ -116,6 +118,7 @@ export const ToolbarContent = () => {
             edge="start"
             color="inherit"
             aria-label="linkedin profile url"
+            style={{ opacity: "0.85" }}
             onClick={(e) => openExternalLink(2)}
           >
             <Icon className="fab fa-linkedin" />
@@ -128,6 +131,7 @@ export const ToolbarContent = () => {
             color="inherit"
             aria-label="github profile"
             onClick={(e) => openExternalLink(1)}
+            style={{ opacity: "0.85" }}
           >
             <Icon className="fab fa-github" />
           </IconButton>
@@ -138,6 +142,7 @@ export const ToolbarContent = () => {
             edge="start"
             color="inherit"
             aria-label="toggle dark and light theme"
+            style={{ opacity: "0.85" }}
             onClick={(e) => dispatch({ type: "TOGGLE_THEME" })}
           >
             {appState.theme === "dark" ? (
