@@ -1,10 +1,17 @@
 import { loadCSS } from "fg-loadcss";
 import "./IndexPage.css";
-import { AppBar, Box, Grid, makeStyles, Toolbar } from "@material-ui/core";
+import {
+  AppBar,
+  Box,
+  Grid,
+  Hidden,
+  makeStyles,
+  Toolbar,
+} from "@material-ui/core";
 import { useEffect } from "react";
 import { SidebarContent } from "./SidebarContent";
 import { ToolbarContent } from "./ToolbarContent";
-import { ProfileBodyContent } from "./ProfileBodyConent";
+import { ProfileBodyContent, ProfileSumaryContent } from "./ProfileBodyConent";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,6 +50,13 @@ export const IndexPage = () => {
 
       <Box>
         <Grid container>
+          {/** Body Content for Small Device */}
+          <Hidden mdUp>
+            <Grid item xs={12} style={{ backgroundColor: "#3C3C39" }}>
+              <ProfileSumaryContent />
+            </Grid>
+          </Hidden>
+
           {/* Left Body Content */}
           <Grid
             item
@@ -56,10 +70,13 @@ export const IndexPage = () => {
             <SidebarContent left={true} />
           </Grid>
 
-          {/* Body Content */}
-          <Grid item xs={12} md={6} style={{ backgroundColor: "#3C3C39" }}>
-            <ProfileBodyContent />
-          </Grid>
+          {/* Body Content For Medium and Large Device */}
+          <Hidden smDown>
+            <Grid item xs={12} md={6} style={{ backgroundColor: "#3C3C39" }}>
+              <ProfileSumaryContent />
+              <ProfileBodyContent />
+            </Grid>
+          </Hidden>
 
           {/* Right  Content */}
           <Grid

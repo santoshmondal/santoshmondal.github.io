@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
 
-export const ProfileBodyContent = () => {
+export const ProfileSumaryContent = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const appState = useSelector((state) => state);
@@ -21,6 +21,22 @@ export const ProfileBodyContent = () => {
 
         <Typography variant="body2" style={{ textAlign: "justify" }}>
           {appState.profile.summary}
+        </Typography>
+      </Box>
+    </Box>
+  );
+};
+
+export const ProfileBodyContent = () => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
+  const appState = useSelector((state) => state);
+
+  return (
+    <Box p={1} px={2}>
+      <Box color="primary.contrastText">
+        <Typography variant="h6" style={{ fontWeight: "bold" }}>
+          Body
         </Typography>
       </Box>
     </Box>
