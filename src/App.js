@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import { ComingSoon } from "./components/ComingSoon";
+import { DevPage } from "./components/DevPage";
 import { IndexPage } from "./components/IndexPage";
 
 function App() {
   return (
     <Switch>
       <Route exact path="/" component={IndexPage} />
-      <Route exact path="/dev" component={ComingSoon} />
+      <Route exact path="/dev" component={DevPage} />
     </Switch>
   );
 }
