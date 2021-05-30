@@ -64,6 +64,7 @@ export const ToolbarContent = () => {
         color="inherit"
         style={{ opacity: "0.85" }}
         aria-label="open drawer"
+        onClick={(e) => dispatch({ type: "TOGGLE_DRAWER" })}
       >
         <MenuIcon />
       </IconButton>
