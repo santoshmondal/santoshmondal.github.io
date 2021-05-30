@@ -3,6 +3,10 @@ import {
   AccordionDetails,
   AccordionSummary,
   Box,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
   makeStyles,
   Typography,
   useMediaQuery,
@@ -10,6 +14,7 @@ import {
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import StarIcon from "@material-ui/icons/Star";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -87,14 +92,57 @@ export const ProfileBodyContent = () => {
             </Box>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
+            <Typography>{""}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}
+    </Box>
+  );
+};
+
+export const ProfileBodyContent1 = () => {
+  const expertise = useSelector((state) => state.profile.expertise);
+  const industries = useSelector((state) => state.profile.industries);
+
+  return (
+    <>
+      <CommonListBodyContent refItem={industries} />
+      <CommonListBodyContent refItem={expertise} />
+    </>
+  );
+};
+
+const CommonListBodyContent = ({ refItem }) => {
+  const theme = useTheme();
+  const classes = useStyles();
+
+  return (
+    <Box p={1} px={2} pb={1}>
+      <Box color="primary.contrastText" fontWeight="bold">
+        <Typography variant="h6">{refItem.title}</Typography>
+      </Box>
+      <Box color="primary.contrastText" style={{ opacity: 0.85 }}>
+        <List
+          component="nav"
+          className={classes.root}
+          aria-label="contacts"
+          dense={true}
+        >
+          {[...refItem.list].map((item, index) => (
+            <ListItem button key={index}>
+              <ListItemIcon>
+                <StarIcon
+                  style={{
+                    color: theme.palette.common.white,
+                    fontSize: "large",
+                  }}
+                />
+              </ListItemIcon>
+              <ListItemText primary={item.title} />
+            </ListItem>
+          ))}
+        </List>
+      </Box>
     </Box>
   );
 };

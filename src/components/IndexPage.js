@@ -11,7 +11,11 @@ import {
 import { useEffect } from "react";
 import { SidebarContent } from "./SidebarContent";
 import { ToolbarContent } from "./ToolbarContent";
-import { ProfileBodyContent, ProfileSumaryContent } from "./ProfileBodyConent";
+import {
+  ProfileBodyContent,
+  ProfileBodyContent1,
+  ProfileSumaryContent,
+} from "./ProfileBodyConent";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,6 +78,7 @@ export const IndexPage = () => {
           <Hidden smDown>
             <Grid item xs={12} md={6} style={{ backgroundColor: "#3C3C39" }}>
               <ProfileSumaryContent />
+              <ProfileBodyContent1 />
               <ProfileBodyContent />
             </Grid>
           </Hidden>
@@ -94,6 +99,7 @@ export const IndexPage = () => {
           {/** Body Content for Small Device */}
           <Hidden mdUp>
             <Grid item xs={12} style={{ backgroundColor: "#3C3C39" }}>
+              <ProfileBodyContent1 />
               <ProfileBodyContent />
             </Grid>
           </Hidden>

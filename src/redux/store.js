@@ -105,7 +105,7 @@ const initState = {
   profile: {
     title: "PROFESSIONAL SUMMARY",
     summary:
-      "Passionate Software Architect and Founder of two company, 15+ years of experience in building robust and highly scalable applications across the E-commerce, Sports, Education and Legal domain. With strong expertise in customer collaboration, requirement analysis, high level design and development using frontend and backend technologies.",
+      "Passionate Software Architect and Founder of two company, 15+ years of experience in building robust and highly scalable applications across the E-commerce, Sports, Education and Law domain. With strong expertise in customer collaboration, requirement analysis, high level design and development using frontend and backend technologies.",
     employment: {
       title: "Employment History",
       list: [
@@ -133,6 +133,25 @@ const initState = {
           esubtitle1: "Project Engineer",
           esubtitle2: "July 2006 - Mar 2011",
         },
+      ],
+    },
+    expertise: {
+      title: "Expertise",
+      list: [
+        { id: 1, title: "Cross Platform Mobile Application Development" },
+        { id: 2, title: "Web Application Development" },
+        { id: 3, title: "Progressive Web Application Development" },
+        { id: 4, title: "Android Native Development" },
+      ],
+    },
+    industries: {
+      title: "Domain & Industries",
+      list: [
+        { id: 1, title: "Law" },
+        { id: 2, title: "ERP" },
+        { id: 3, title: "Sports" },
+        { id: 4, title: "Education" },
+        { id: 5, title: "E-Commerce" },
       ],
     },
   },
