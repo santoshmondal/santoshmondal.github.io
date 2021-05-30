@@ -108,6 +108,32 @@ const initState = {
       "Passionate Software Architect and Founder of two company, 15+ years of experience in building robust and highly scalable applications across the E-commerce, Sports, Education and Legal domain. With strong expertise in customer collaboration, requirement analysis, high level design and development using frontend and backend technologies.",
     employment: {
       title: "Employment History",
+      list: [
+        {
+          id: 1,
+          etitle: "Koeroom.Tech",
+          esubtitle1: "Founder",
+          esubtitle2: "Jan 2021 - Present",
+        },
+        {
+          id: 2,
+          etitle: "Affixus Systems",
+          esubtitle1: "Founder",
+          esubtitle2: "Dec 2015 - Feb 2018",
+        },
+        {
+          id: 3,
+          etitle: "Rediff.Com",
+          esubtitle1: "Senior Software Engineer",
+          esubtitle2: "Mar 2011 - Dec 2015",
+        },
+        {
+          id: 4,
+          etitle: "CDAC",
+          esubtitle1: "Project Engineer",
+          esubtitle2: "July 2006 - Mar 2011",
+        },
+      ],
     },
   },
 };

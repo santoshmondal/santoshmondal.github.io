@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
-    flexBasis: "33.33%",
+    flexBasis: "45%",
     flexShrink: 0,
   },
   secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(10),
   },
 }));
 
@@ -60,7 +60,7 @@ export const ProfileBodyContent = () => {
         <Typography variant="h6">{employment.title}</Typography>
       </Box>
 
-      {[1, 2, 3, 4].map((item, index) => (
+      {[...employment.list].map((item, index) => (
         <Accordion
           key={index}
           style={{ background: "#3C3C39", color: theme.palette.common.white }}
@@ -70,15 +70,21 @@ export const ProfileBodyContent = () => {
               <ExpandMoreIcon style={{ color: theme.palette.common.white }} />
             }
           >
-            <Typography className={classes.heading}>
-              General settings
-            </Typography>
-            <Typography
-              className={classes.secondaryHeading}
-              style={{ color: theme.palette.grey[400] }}
-            >
-              I am an accordion
-            </Typography>
+            <Box>
+              <Typography className={classes.heading}>{item.etitle}</Typography>
+              <Typography
+                className={classes.secondaryHeading}
+                style={{ color: theme.palette.grey[400] }}
+              >
+                {item.esubtitle2}
+              </Typography>
+              <Typography
+                className={classes.secondaryHeading}
+                style={{ color: theme.palette.grey[400] }}
+              >
+                {item.esubtitle1}
+              </Typography>
+            </Box>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
