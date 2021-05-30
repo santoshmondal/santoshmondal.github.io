@@ -145,7 +145,7 @@ const initState = {
       ],
     },
     industries: {
-      title: "Domain & Industries",
+      title: "Domain",
       list: [
         { id: 1, title: "Law" },
         { id: 2, title: "ERP" },

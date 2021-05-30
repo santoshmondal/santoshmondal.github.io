@@ -58,6 +58,8 @@ export const IndexPage = () => {
           <Hidden mdUp>
             <Grid item xs={12} style={{ backgroundColor: "#3C3C39" }}>
               <ProfileSumaryContent />
+              <ProfileBodyContent1 />
+              <ProfileBodyContent />
             </Grid>
           </Hidden>
 
@@ -97,7 +99,7 @@ export const IndexPage = () => {
           </Grid>
 
           {/** Body Content for Small Device */}
-          <Hidden mdUp>
+          <Hidden xsUp>
             <Grid item xs={12} style={{ backgroundColor: "#3C3C39" }}>
               <ProfileBodyContent1 />
               <ProfileBodyContent />
