@@ -6,6 +6,7 @@ import {
   ListItemIcon,
   ListItemText,
   makeStyles,
+  useTheme,
 } from "@material-ui/core";
 import clsx from "clsx";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
@@ -23,6 +24,7 @@ const useStyles = makeStyles({
 
 export const AppNavigationDrawer = () => {
   const classes = useStyles();
+  const theme = useTheme();
   const dispatch = useDispatch();
 
   const toggleDrawer = (open) => (event) => {
@@ -43,11 +45,18 @@ export const AppNavigationDrawer = () => {
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
+      style={{
+        backgroundColor: theme.palette.background.paper,
+        height: "100%",
+        color: theme.palette.text.primary,
+      }}
     >
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>
+            <ListItemIcon
+              style={{ color: theme.palette.text.primary, opacity: "0.85" }}
+            >
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
             <ListItemText primary={text} />
@@ -58,7 +67,9 @@ export const AppNavigationDrawer = () => {
       <List>
         {["All mail", "Trash", "Spam"].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>
+            <ListItemIcon
+              style={{ color: theme.palette.text.primary, opacity: "0.85" }}
+            >
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
             <ListItemText primary={text} />
