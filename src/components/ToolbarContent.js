@@ -16,7 +16,8 @@ import {
 import { useEffect } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
-import MoreVertRoundedIcon from "@material-ui/icons/MoreVertRounded";
+import Brightness4RoundedIcon from "@material-ui/icons/Brightness4Rounded";
+import Brightness7RoundedIcon from "@material-ui/icons/Brightness7Rounded";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,7 +81,7 @@ export const ToolbarContent = () => {
         justifyContent="center"
         alignItems="center"
         height="1"
-        style={{ marginLeft: matches ? "0px" : "-16px" }}
+        style={{ marginLeft: matches ? "16px" : "-16px" }}
       >
         <Box textAlign="center">
           <Typography
@@ -108,9 +109,8 @@ export const ToolbarContent = () => {
         <Tooltip title="Email me at santosh.ece06@gmail.com">
           <IconButton
             edge="start"
-            className={classes.menuButton}
             color="inherit"
-            aria-label="open drawer"
+            aria-label="mail to"
             onClick={(e) => openExternalLink(3)}
           >
             <EmailRoundedIcon />
@@ -120,9 +120,8 @@ export const ToolbarContent = () => {
         <Tooltip title="LinkedIn Profile">
           <IconButton
             edge="start"
-            className={classes.menuButton}
             color="inherit"
-            aria-label="open drawer"
+            aria-label="linkedin profile url"
             onClick={(e) => openExternalLink(2)}
           >
             <Icon className="fab fa-linkedin" />
@@ -132,12 +131,21 @@ export const ToolbarContent = () => {
         <Tooltip title="Github Profile">
           <IconButton
             edge="start"
-            className={classes.menuButton}
             color="inherit"
-            aria-label="open drawer"
+            aria-label="github profile"
             onClick={(e) => openExternalLink(1)}
           >
             <Icon className="fab fa-github" />
+          </IconButton>
+        </Tooltip>
+
+        <Tooltip title="Toggle Light and Dark Theme">
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="toggle dark and light theme"
+          >
+            <Brightness7RoundedIcon />
           </IconButton>
         </Tooltip>
       </Hidden>
