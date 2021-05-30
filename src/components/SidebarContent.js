@@ -12,6 +12,9 @@ export const SidebarContent = ({ left }) => {
       style={{ minHeight: matches ? "calc(100vh - 100px)" : "inherit" }}
       p={1}
       px={2}
+      borderRight={left ? 1 : 0}
+      borderLeft={!left ? 1 : 0}
+      borderColor={theme.palette.grey[800]}
     >
       {/** SKILLS LIST */}
       {[...appState.sideItemList]

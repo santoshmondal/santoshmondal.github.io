@@ -49,7 +49,7 @@ export const IndexPage = () => {
           </Grid>
 
           {/* Body Content */}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} style={{ backgroundColor: "#3C3C39" }}>
             <ProfileBodyContent />
           </Grid>
 
