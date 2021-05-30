@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loadCSS } from "fg-loadcss";
 import "./IndexPage.css";
 import {
@@ -26,6 +26,7 @@ export const ToolbarContent = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const appState = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const node = loadCSS(
@@ -136,8 +137,13 @@ export const ToolbarContent = () => {
             edge="start"
             color="inherit"
             aria-label="toggle dark and light theme"
+            onClick={(e) => dispatch({ type: "TOGGLE_THEME" })}
           >
-            <Brightness7RoundedIcon />
+            {appState.theme === "dark" ? (
+              <Brightness7RoundedIcon />
+            ) : (
+              <Brightness4RoundedIcon />
+            )}
           </IconButton>
         </Tooltip>
       </Hidden>

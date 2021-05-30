@@ -24,3 +24,6 @@
 
 - React Developer Tool Extension
   `https://extension.remotedev.io/`
+
+- Switch between Dark / Light Theme
+  `https://adityanaik.dev/blog/2020/05/20/material-ui-how-to-easily-set-up-dark-theme-toggle-in-react/`
