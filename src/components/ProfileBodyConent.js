@@ -40,7 +40,7 @@ export const ProfileSumaryContent = () => {
         <Typography variant="h6">{appState.profile.title}</Typography>
       </Box>
 
-      <Box textAlign="justify" style={{ opacity: 0.85 }}>
+      <Box textAlign="justify" style={{ opacity: 0.9 }}>
         <Typography variant={matches ? "body2" : "caption"}>
           {appState.profile.summary}
         </Typography>
