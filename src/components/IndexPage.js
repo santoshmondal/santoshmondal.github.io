@@ -19,6 +19,7 @@ import {
   ProfileSumaryContent,
 } from "./ProfileBodyConent";
 import { useDispatch, useSelector } from "react-redux";
+import { AppNavigationDrawer } from "./AppNavigationDrawer";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -69,7 +70,7 @@ export const IndexPage = () => {
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
       >
-        <Box>Hello World</Box>
+        <AppNavigationDrawer />
       </SwipeableDrawer>
 
       <AppBar position="sticky">
