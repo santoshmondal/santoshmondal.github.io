@@ -79,7 +79,14 @@ export const IndexPage = () => {
 
           {/* Body Content For Medium and Large Device */}
           <Hidden smDown>
-            <Grid item xs={12} md={6} style={{ backgroundColor: "#3C3C39" }}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              style={{
+                backgroundColor: theme.palette.background.paper,
+              }}
+            >
               <ProfileSumaryContent />
               <ProfileBodyContent1 />
               <ProfileBodyContent />
