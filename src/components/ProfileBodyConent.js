@@ -33,11 +33,12 @@ export const ProfileBodyContent = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const appState = useSelector((state) => state);
+  const employment = useSelector((state) => state.profile.employment);
 
   return (
     <Box p={1} px={2} pb={1}>
       <Box color="primary.contrastText" fontWeight="bold">
-        <Typography variant="h6">Body</Typography>
+        <Typography variant="h6">{employment.title}</Typography>
       </Box>
     </Box>
   );
