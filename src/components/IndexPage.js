@@ -17,6 +17,7 @@ import {
   ProfileBodyContent1,
   ProfileSumaryContent,
 } from "./ProfileBodyConent";
+import { grey } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -57,7 +58,11 @@ export const IndexPage = () => {
         <Grid container>
           {/** Body Content for Small Device */}
           <Hidden mdUp>
-            <Grid item xs={12} style={{ backgroundColor: "#3C3C39" }}>
+            <Grid
+              item
+              xs={12}
+              style={{ backgroundColor: theme.palette.background.paper }}
+            >
               <ProfileSumaryContent />
               <ProfileBodyContent1 />
               <ProfileBodyContent />
@@ -71,7 +76,10 @@ export const IndexPage = () => {
             md={3}
             style={{
               backgroundColor: theme.palette.background.paper,
-              borderRight: "1px solid rgba(255, 255, 255, 0.075)",
+              borderRight:
+                theme.palette.type === "dark"
+                  ? "1px solid rgba(255, 255, 255, 0.075)"
+                  : "1px solid rgba(0, 0, 0, 0.075)",
             }}
           >
             <SidebarContent left={true} />
@@ -100,7 +108,10 @@ export const IndexPage = () => {
             md={3}
             style={{
               backgroundColor: theme.palette.background.paper,
-              borderLeft: "1px solid rgba(255, 255, 255, 0.075)",
+              borderLeft:
+                theme.palette.type === "dark"
+                  ? "1px solid rgba(255, 255, 255, 0.075)"
+                  : "1px solid rgba(0, 0, 0, 0.075)",
             }}
           >
             <SidebarContent />
@@ -108,7 +119,11 @@ export const IndexPage = () => {
 
           {/** Body Content for Small Device */}
           <Hidden xsUp>
-            <Grid item xs={12} style={{ backgroundColor: "#3C3C39" }}>
+            <Grid
+              item
+              xs={12}
+              style={{ backgroundColor: theme.palette.background.paper }}
+            >
               <ProfileBodyContent1 />
               <ProfileBodyContent />
             </Grid>

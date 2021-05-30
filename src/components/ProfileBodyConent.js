@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
     flexBasis: "45%",
     flexShrink: 0,
   },
@@ -48,6 +47,7 @@ export const ProfileSumaryContent = () => {
 
 export const ProfileBodyContent = () => {
   const classes = useStyles();
+  const theme = useTheme();
   const employment = useSelector((state) => state.profile.employment);
 
   return (
@@ -57,8 +57,18 @@ export const ProfileBodyContent = () => {
       </Box>
 
       {[...employment.list].map((item, index) => (
-        <Accordion key={index}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <Accordion
+          key={index}
+          style={{
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
+          }}
+        >
+          <AccordionSummary
+            expandIcon={
+              <ExpandMoreIcon style={{ color: theme.palette.text.primary }} />
+            }
+          >
             <Box>
               <Typography className={classes.heading}>{item.etitle}</Typography>
               <Typography className={classes.secondaryHeading}>
