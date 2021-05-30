@@ -6,6 +6,7 @@ import {
   Grid,
   Hidden,
   makeStyles,
+  SwipeableDrawer,
   Toolbar,
   useTheme,
 } from "@material-ui/core";
@@ -17,7 +18,7 @@ import {
   ProfileBodyContent1,
   ProfileSumaryContent,
 } from "./ProfileBodyConent";
-import { grey } from "@material-ui/core/colors";
+import { useDispatch, useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -34,6 +35,8 @@ const useStyles = makeStyles((theme) => ({
 export const IndexPage = () => {
   const classes = useStyles();
   const theme = useTheme();
+  const appState = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const node = loadCSS(
@@ -46,90 +49,109 @@ export const IndexPage = () => {
     };
   }, []);
 
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    dispatch({ type: "TOGGLE_DRAWER" });
+  };
+
   return (
     <>
+      <SwipeableDrawer
+        anchor="left"
+        open={appState.drawerOpen}
+        onClose={toggleDrawer(false)}
+        onOpen={toggleDrawer(true)}
+      >
+        <Box>Hello World</Box>
+      </SwipeableDrawer>
+
       <AppBar position="sticky">
         <Toolbar className={classes.toolbar}>
           <ToolbarContent></ToolbarContent>
         </Toolbar>
       </AppBar>
 
-      <Box>
-        <Grid container>
-          {/** Body Content for Small Device */}
-          <Hidden mdUp>
-            <Grid
-              item
-              xs={12}
-              style={{ backgroundColor: theme.palette.background.paper }}
-            >
-              <ProfileSumaryContent />
-              <ProfileBodyContent1 />
-              <ProfileBodyContent />
-            </Grid>
-          </Hidden>
-
-          {/* Left Body Content */}
+      <Grid container>
+        {/** Body Content for Small Device */}
+        <Hidden mdUp>
           <Grid
             item
             xs={12}
-            md={3}
-            style={{
-              backgroundColor: theme.palette.background.paper,
-              borderRight:
-                theme.palette.type === "dark"
-                  ? "1px solid rgba(255, 255, 255, 0.075)"
-                  : "1px solid rgba(0, 0, 0, 0.075)",
-            }}
+            style={{ backgroundColor: theme.palette.background.paper }}
           >
-            <SidebarContent left={true} />
+            <ProfileSumaryContent />
+            <ProfileBodyContent1 />
+            <ProfileBodyContent />
           </Grid>
+        </Hidden>
 
-          {/* Body Content For Medium and Large Device */}
-          <Hidden smDown>
-            <Grid
-              item
-              xs={12}
-              md={6}
-              style={{
-                backgroundColor: theme.palette.background.paper,
-              }}
-            >
-              <ProfileSumaryContent />
-              <ProfileBodyContent1 />
-              <ProfileBodyContent />
-            </Grid>
-          </Hidden>
-
-          {/* Right  Content */}
-          <Grid
-            item
-            xs={12}
-            md={3}
-            style={{
-              backgroundColor: theme.palette.background.paper,
-              borderLeft:
-                theme.palette.type === "dark"
-                  ? "1px solid rgba(255, 255, 255, 0.075)"
-                  : "1px solid rgba(0, 0, 0, 0.075)",
-            }}
-          >
-            <SidebarContent />
-          </Grid>
-
-          {/** Body Content for Small Device */}
-          <Hidden xsUp>
-            <Grid
-              item
-              xs={12}
-              style={{ backgroundColor: theme.palette.background.paper }}
-            >
-              <ProfileBodyContent1 />
-              <ProfileBodyContent />
-            </Grid>
-          </Hidden>
+        {/* Left Body Content */}
+        <Grid
+          item
+          xs={12}
+          md={3}
+          style={{
+            backgroundColor: theme.palette.background.paper,
+            borderRight:
+              theme.palette.type === "dark"
+                ? "1px solid rgba(255, 255, 255, 0.075)"
+                : "1px solid rgba(0, 0, 0, 0.075)",
+          }}
+        >
+          <SidebarContent left={true} />
         </Grid>
-      </Box>
+
+        {/* Body Content For Medium and Large Device */}
+        <Hidden smDown>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            style={{
+              backgroundColor: theme.palette.background.paper,
+            }}
+          >
+            <ProfileSumaryContent />
+            <ProfileBodyContent1 />
+            <ProfileBodyContent />
+          </Grid>
+        </Hidden>
+
+        {/* Right  Content */}
+        <Grid
+          item
+          xs={12}
+          md={3}
+          style={{
+            backgroundColor: theme.palette.background.paper,
+            borderLeft:
+              theme.palette.type === "dark"
+                ? "1px solid rgba(255, 255, 255, 0.075)"
+                : "1px solid rgba(0, 0, 0, 0.075)",
+          }}
+        >
+          <SidebarContent />
+        </Grid>
+
+        {/** Body Content for Small Device */}
+        <Hidden xsUp>
+          <Grid
+            item
+            xs={12}
+            style={{ backgroundColor: theme.palette.background.paper }}
+          >
+            <ProfileBodyContent1 />
+            <ProfileBodyContent />
+          </Grid>
+        </Hidden>
+      </Grid>
     </>
   );
 };
