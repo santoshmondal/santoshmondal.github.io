@@ -7,6 +7,7 @@ import {
   Hidden,
   makeStyles,
   Toolbar,
+  useTheme,
 } from "@material-ui/core";
 import { useEffect } from "react";
 import { SidebarContent } from "./SidebarContent";
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const IndexPage = () => {
   const classes = useStyles();
+  const theme = useTheme();
 
   useEffect(() => {
     const node = loadCSS(
@@ -68,7 +70,7 @@ export const IndexPage = () => {
             xs={12}
             md={3}
             style={{
-              backgroundColor: "#3C3C39",
+              backgroundColor: theme.palette.background.paper,
               borderRight: "1px solid rgba(255, 255, 255, 0.075)",
             }}
           >
@@ -90,7 +92,7 @@ export const IndexPage = () => {
             xs={12}
             md={3}
             style={{
-              backgroundColor: "#3C3C39",
+              backgroundColor: theme.palette.background.paper,
               borderLeft: "1px solid rgba(255, 255, 255, 0.075)",
             }}
           >

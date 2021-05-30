@@ -8,17 +8,13 @@ export const SidebarContent = ({ left }) => {
   const appState = useSelector((state) => state);
 
   return (
-    <Box p={2} px={2} pb={1}>
+    <Box p={2} px={2} pb={1} color="text.primary">
       {/** SKILLS LIST */}
       {[...appState.sideItemList]
         .filter((fitem) => fitem.left === left)
         .map((item, index) => (
           <Box key={index} mb={2}>
-            <Box
-              color="primary.contrastText"
-              fontWeight="bold"
-              style={{ fontSize: "large" }}
-            >
+            <Box fontWeight="bold" style={{ fontSize: "large" }}>
               {item.title}
             </Box>
 
@@ -34,37 +30,22 @@ export const SidebarContent = ({ left }) => {
                 <Box display="flex" alignItems="center">
                   <Icon
                     className={subitem.icon}
-                    style={{
-                      color: theme.palette.common.white,
-                      fontSize: "small",
-                    }}
-                  />
-                  <Box
-                    ml={1}
-                    color="primary.contrastText"
                     style={{ fontSize: "small" }}
-                  >
+                  />
+                  <Box ml={1} style={{ fontSize: "small" }}>
                     {subitem.subtitle}
                   </Box>
                 </Box>
-                <Box color="primary.contrastText" display="flex">
+                <Box display="flex">
                   {[1, 2, 3, 4, 5].map((skillItem, skillIndex) => (
                     <Box key={skillIndex}>
                       {skillItem <= subitem.rating ? (
                         <LensRounded
-                          style={{
-                            color: theme.palette.common.white,
-                            fontSize: "xx-small",
-                            marginLeft: "4px",
-                          }}
+                          style={{ fontSize: "xx-small", marginLeft: "4px" }}
                         />
                       ) : (
                         <LensOutlined
-                          style={{
-                            color: theme.palette.common.white,
-                            fontSize: "xx-small",
-                            marginLeft: "4px",
-                          }}
+                          style={{ fontSize: "xx-small", marginLeft: "4px" }}
                         />
                       )}
                     </Box>
