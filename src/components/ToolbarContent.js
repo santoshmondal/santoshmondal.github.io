@@ -16,6 +16,7 @@ import {
 import { useEffect } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
+import MoreVertRoundedIcon from "@material-ui/icons/MoreVertRounded";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -139,6 +140,26 @@ export const ToolbarContent = () => {
             </IconButton>
           </Tooltip>
         </Grid>
+      </Hidden>
+
+      <Hidden mdUp>
+        <Box
+          style={{ background: "inherit" }}
+          position="fixed"
+          top={0}
+          right={0}
+        >
+          <Tooltip title="More Options">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="open drawer"
+            >
+              <MoreVertRoundedIcon />
+            </IconButton>
+          </Tooltip>
+        </Box>
       </Hidden>
     </Grid>
   );
