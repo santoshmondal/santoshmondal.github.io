@@ -31,6 +31,8 @@ const useStyles = makeStyles((theme) => ({
 
 export const ProfileSumaryContent = () => {
   const appState = useSelector((state) => state);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (
     <Box p={2} px={2} pb={1} color="text.primary">
@@ -39,7 +41,9 @@ export const ProfileSumaryContent = () => {
       </Box>
 
       <Box textAlign="justify" style={{ opacity: 0.85 }}>
-        <Typography variant="body2">{appState.profile.summary}</Typography>
+        <Typography variant={matches ? "body2" : "caption"}>
+          {appState.profile.summary}
+        </Typography>
       </Box>
     </Box>
   );

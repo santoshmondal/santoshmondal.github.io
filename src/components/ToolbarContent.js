@@ -74,7 +74,7 @@ export const ToolbarContent = () => {
         justifyContent="center"
         alignItems="center"
         height="1"
-        mt={{ xs: 1, sm: 1 }}
+        mt={{ xs: 1, sm: 1, md: 0 }}
         style={{ marginLeft: matches ? "32px" : "-16px" }}
       >
         <Box textAlign="center">
