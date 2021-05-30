@@ -68,8 +68,6 @@ export const ProfileBodyContent = () => {
             expandIcon={
               <ExpandMoreIcon style={{ color: theme.palette.common.white }} />
             }
-            aria-controls="panel1a-content"
-            id="panel1a-header"
           >
             <Typography className={classes.heading}>
               General settings

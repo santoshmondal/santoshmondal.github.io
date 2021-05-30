@@ -92,6 +92,12 @@ export const ToolbarContent = () => {
               {appState.designation}
             </Typography>
           </Box>
+
+          <Box textAlign="center">
+            <Typography variant={matches ? "caption" : "caption"}>
+              {appState.headerRow3}
+            </Typography>
+          </Box>
         </Box>
       </Grid>
 

@@ -9,6 +9,7 @@ const initState = {
   landingTitle: "Landing page title",
   username: "Santosh Kumar Mondal",
   designation: "Founder / Product Architect",
+  headerRow3: "Blockchain Enthusiast",
 
   githubUrl: "https://github.com/santoshmondal",
   linkedinUrl: "https://www.linkedin.com/in/santooindian/",
