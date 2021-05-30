@@ -8,7 +8,7 @@ export const SidebarContent = ({ left }) => {
   const appState = useSelector((state) => state);
 
   return (
-    <Box p={2} px={2}>
+    <Box p={2} px={2} pb={1}>
       {/** SKILLS LIST */}
       {[...appState.sideItemList]
         .filter((fitem) => fitem.left === left)

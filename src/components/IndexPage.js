@@ -90,6 +90,13 @@ export const IndexPage = () => {
           >
             <SidebarContent />
           </Grid>
+
+          {/** Body Content for Small Device */}
+          <Hidden mdUp>
+            <Grid item xs={12} style={{ backgroundColor: "#3C3C39" }}>
+              <ProfileBodyContent />
+            </Grid>
+          </Hidden>
         </Grid>
       </Box>
     </>
