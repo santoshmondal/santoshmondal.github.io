@@ -106,8 +106,8 @@ export const ProfileBodyContent1 = () => {
 
   return (
     <>
-      <CommonListBodyContent refItem={industries} />
       <CommonListBodyContent refItem={expertise} />
+      <CommonListBodyContent refItem={industries} />
     </>
   );
 };

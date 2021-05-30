@@ -58,8 +58,8 @@ export const IndexPage = () => {
           <Hidden mdUp>
             <Grid item xs={12} style={{ backgroundColor: "#3C3C39" }}>
               <ProfileSumaryContent />
-              <ProfileBodyContent />
               <ProfileBodyContent1 />
+              <ProfileBodyContent />
             </Grid>
           </Hidden>
 
@@ -80,8 +80,8 @@ export const IndexPage = () => {
           <Hidden smDown>
             <Grid item xs={12} md={6} style={{ backgroundColor: "#3C3C39" }}>
               <ProfileSumaryContent />
-              <ProfileBodyContent />
               <ProfileBodyContent1 />
+              <ProfileBodyContent />
             </Grid>
           </Hidden>
 
