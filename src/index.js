@@ -15,9 +15,9 @@ import { store } from "./redux/store";
 
 ReactDOM.render(
   <React.StrictMode>
-    <CssBaseline />
     <Provider store={store}>
       <Router>
+        <CssBaseline />
         <App />
       </Router>
     </Provider>

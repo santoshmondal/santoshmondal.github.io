@@ -24,6 +24,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: "120px",
     },
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.text.primary,
   },
 }));
 
