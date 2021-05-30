@@ -19,15 +19,7 @@ import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
 import Brightness4RoundedIcon from "@material-ui/icons/Brightness4Rounded";
 import Brightness7RoundedIcon from "@material-ui/icons/Brightness7Rounded";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    color: theme.palette.primary.main,
-  },
-  toolbar: {
-    height: "100px",
-    backgroundColor: "#333330",
-  },
-}));
+const useStyles = makeStyles((theme) => ({}));
 
 export const ToolbarContent = () => {
   const classes = useStyles();

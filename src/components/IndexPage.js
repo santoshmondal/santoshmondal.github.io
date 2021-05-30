@@ -18,16 +18,12 @@ import {
 } from "./ProfileBodyConent";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    color: theme.palette.primary.main,
-  },
   toolbar: {
     height: "100px",
     alignItems: "flex-start",
     [theme.breakpoints.down("sm")]: {
       height: "120px",
     },
-    backgroundColor: "#333330",
   },
 }));
 
