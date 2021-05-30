@@ -50,7 +50,7 @@ export const IndexPage = () => {
             md={3}
             style={{
               backgroundColor: "#3C3C39",
-              borderRight: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRight: "1px solid rgba(255, 255, 255, 0.075)",
             }}
           >
             <SidebarContent left={true} />
@@ -68,7 +68,7 @@ export const IndexPage = () => {
             md={3}
             style={{
               backgroundColor: "#3C3C39",
-              borderLeft: "1px solid rgba(255, 255, 255, 0.1)",
+              borderLeft: "1px solid rgba(255, 255, 255, 0.075)",
             }}
           >
             <SidebarContent />
