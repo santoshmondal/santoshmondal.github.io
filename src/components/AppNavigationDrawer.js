@@ -1,6 +1,7 @@
 import {
   Box,
   Divider,
+  Icon,
   List,
   ListItem,
   ListItemIcon,
@@ -9,8 +10,10 @@ import {
   useTheme,
 } from "@material-ui/core";
 import clsx from "clsx";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import Brightness4RoundedIcon from "@material-ui/icons/Brightness4Rounded";
+import Brightness7RoundedIcon from "@material-ui/icons/Brightness7Rounded";
+
 import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles({
@@ -52,29 +55,41 @@ export const AppNavigationDrawer = () => {
       }}
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon
-              style={{ color: theme.palette.text.primary, opacity: "0.85" }}
-            >
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon
-              style={{ color: theme.palette.text.primary, opacity: "0.85" }}
-            >
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button>
+          <ListItemIcon
+            style={{ color: theme.palette.text.primary, opacity: "0.85" }}
+          >
+            <Brightness7RoundedIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Toggle Dark & Light Theme"} />
+        </ListItem>
+
+        <ListItem button>
+          <ListItemIcon
+            style={{ color: theme.palette.text.primary, opacity: "0.85" }}
+          >
+            <MailIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Email/Inbox Me"} />
+        </ListItem>
+
+        <ListItem button>
+          <ListItemIcon
+            style={{ color: theme.palette.text.primary, opacity: "0.85" }}
+          >
+            <Icon className="fab fa-github" />
+          </ListItemIcon>
+          <ListItemText primary={"Github Profile"} />
+        </ListItem>
+
+        <ListItem button>
+          <ListItemIcon
+            style={{ color: theme.palette.text.primary, opacity: "0.85" }}
+          >
+            <Icon className="fab fa-linkedin" />
+          </ListItemIcon>
+          <ListItemText primary={"LinkedIn Profile"} />
+        </ListItem>
       </List>
     </div>
   );
