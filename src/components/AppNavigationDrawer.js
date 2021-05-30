@@ -13,6 +13,7 @@ import clsx from "clsx";
 import MailIcon from "@material-ui/icons/Mail";
 import Brightness4RoundedIcon from "@material-ui/icons/Brightness4Rounded";
 import Brightness7RoundedIcon from "@material-ui/icons/Brightness7Rounded";
+import PhoneIphoneRoundedIcon from "@material-ui/icons/PhoneIphoneRounded";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -113,6 +114,15 @@ export const AppNavigationDrawer = () => {
             <Icon className="fab fa-linkedin" />
           </ListItemIcon>
           <ListItemText primary={"LinkedIn Profile"} />
+        </ListItem>
+
+        <ListItem button>
+          <ListItemIcon
+            style={{ color: theme.palette.text.primary, opacity: "0.85" }}
+          >
+            <PhoneIphoneRoundedIcon />
+          </ListItemIcon>
+          <ListItemText primary={"+91-9323791976"} />
         </ListItem>
       </List>
     </div>
