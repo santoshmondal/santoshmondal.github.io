@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     height: "100px",
     [theme.breakpoints.down("sm")]: {
-      height: "150px",
+      height: "175px",
     },
     backgroundColor: "#333330",
   },

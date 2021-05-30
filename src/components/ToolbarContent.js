@@ -147,7 +147,7 @@ export const ToolbarContent = () => {
           style={{ background: "inherit" }}
           position="fixed"
           top={0}
-          right={0}
+          left={16}
         >
           <Tooltip title="More Options">
             <IconButton
@@ -156,7 +156,7 @@ export const ToolbarContent = () => {
               color="inherit"
               aria-label="open drawer"
             >
-              <MoreVertRoundedIcon />
+              <MenuIcon />
             </IconButton>
           </Tooltip>
         </Box>

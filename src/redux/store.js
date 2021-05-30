@@ -147,11 +147,11 @@ const initState = {
     industries: {
       title: "Domain",
       list: [
-        { id: 1, title: "Law" },
-        { id: 2, title: "ERP" },
-        { id: 3, title: "Sports" },
-        { id: 4, title: "Education" },
-        { id: 5, title: "E-Commerce" },
+        { id: 1, title: "Law & Legal Practice" },
+        { id: 2, title: "ERP - In Distribution" },
+        { id: 3, title: "Sports -  Cricket & Basketball" },
+        { id: 4, title: "Education - Learning Platform" },
+        { id: 5, title: "E-Commerce - In Shopping" },
       ],
     },
   },
