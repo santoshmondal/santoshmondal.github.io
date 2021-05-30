@@ -101,6 +101,11 @@ const initState = {
       ],
     },
   ],
+  profile: {
+    title: "PROFESSIONAL SUMMARY",
+    summary:
+      "Passionate Software Architect and Founder of two company, 15+ years of experience in building robust and highly scalable applications across the E-commerce, Sports, Education and Legal domain. With strong expertise in customer collaboration, requirement analysis, high level design and development using frontend and backend technologies.",
+  },
 };
 
 const rootReducer = (state = initState, action) => {
