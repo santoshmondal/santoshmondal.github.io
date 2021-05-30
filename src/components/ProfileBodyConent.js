@@ -42,7 +42,7 @@ export const ProfileSumaryContent = () => {
         px={!matches ? 0 : 0}
         style={{ opacity: 0.9 }}
       >
-        <Typography variant="body2">{appState.profile.summary}</Typography>
+        <Typography variant="caption">{appState.profile.summary}</Typography>
       </Box>
     </Box>
   );
