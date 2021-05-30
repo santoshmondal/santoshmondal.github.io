@@ -63,7 +63,7 @@ const initState = {
         { subtitle: "AWS", rating: 4, icon: "fab fa-aws" },
         { subtitle: "Firebase", rating: 4, icon: "fas fa-folder-open" },
         { subtitle: "Google Cloud", rating: 4, icon: "fab fa-google" },
-        { subtitle: "Mircosoft Azure", rating: 3, icon: "fas fa-cloud" },
+        { subtitle: "Mircosoft Azure", rating: 3, icon: "fab fa-microsoft" },
       ],
     },
 
