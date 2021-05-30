@@ -8,14 +8,7 @@ export const SidebarContent = ({ left }) => {
   const appState = useSelector((state) => state);
 
   return (
-    <Box
-      style={{ minHeight: matches ? "calc(100vh - 100px)" : "inherit" }}
-      p={1}
-      px={2}
-      borderRight={left ? 1 : 0}
-      borderLeft={!left ? 1 : 0}
-      borderColor={theme.palette.grey[800]}
-    >
+    <Box p={1} px={2}>
       {/** SKILLS LIST */}
       {[...appState.sideItemList]
         .filter((fitem) => fitem.left === left)

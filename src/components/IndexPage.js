@@ -44,7 +44,15 @@ export const IndexPage = () => {
       <Box>
         <Grid container>
           {/* Left Body Content */}
-          <Grid item xs={12} md={3} style={{ backgroundColor: "#3C3C39" }}>
+          <Grid
+            item
+            xs={12}
+            md={3}
+            style={{
+              backgroundColor: "#3C3C39",
+              borderRight: "1px solid rgba(255, 255, 255, 0.1)",
+            }}
+          >
             <SidebarContent left={true} />
           </Grid>
 
@@ -54,7 +62,15 @@ export const IndexPage = () => {
           </Grid>
 
           {/* Right  Content */}
-          <Grid item xs={12} md={3} style={{ backgroundColor: "#3C3C39" }}>
+          <Grid
+            item
+            xs={12}
+            md={3}
+            style={{
+              backgroundColor: "#3C3C39",
+              borderLeft: "1px solid rgba(255, 255, 255, 0.1)",
+            }}
+          >
             <SidebarContent />
           </Grid>
         </Grid>
