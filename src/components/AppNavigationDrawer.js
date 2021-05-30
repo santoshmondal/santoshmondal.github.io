@@ -14,7 +14,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import Brightness4RoundedIcon from "@material-ui/icons/Brightness4Rounded";
 import Brightness7RoundedIcon from "@material-ui/icons/Brightness7Rounded";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const useStyles = makeStyles({
   list: {
@@ -28,6 +28,7 @@ const useStyles = makeStyles({
 export const AppNavigationDrawer = () => {
   const classes = useStyles();
   const theme = useTheme();
+  const appState = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const toggleDrawer = (open) => (event) => {
@@ -40,6 +41,25 @@ export const AppNavigationDrawer = () => {
     }
 
     dispatch({ type: "TOGGLE_DRAWER" });
+  };
+
+  const openExternalLink = (linkType) => {
+    let elink = "";
+
+    switch (linkType) {
+      case 1:
+        elink = appState.githubUrl;
+        break;
+      case 2:
+        elink = appState.linkedinUrl;
+        break;
+      case 3:
+        elink = appState.mailTo;
+        break;
+      default:
+        break;
+    }
+    window.open(elink);
   };
 
   return (
@@ -55,16 +75,20 @@ export const AppNavigationDrawer = () => {
       }}
     >
       <List>
-        <ListItem button>
+        <ListItem button onClick={(e) => dispatch({ type: "TOGGLE_THEME" })}>
           <ListItemIcon
             style={{ color: theme.palette.text.primary, opacity: "0.85" }}
           >
-            <Brightness7RoundedIcon />
+            {appState.theme === "dark" ? (
+              <Brightness7RoundedIcon />
+            ) : (
+              <Brightness4RoundedIcon />
+            )}
           </ListItemIcon>
           <ListItemText primary={"Toggle Dark & Light Theme"} />
         </ListItem>
 
-        <ListItem button>
+        <ListItem button onClick={(e) => openExternalLink(3)}>
           <ListItemIcon
             style={{ color: theme.palette.text.primary, opacity: "0.85" }}
           >
@@ -73,7 +97,7 @@ export const AppNavigationDrawer = () => {
           <ListItemText primary={"Email/Inbox Me"} />
         </ListItem>
 
-        <ListItem button>
+        <ListItem button onClick={(e) => openExternalLink(1)}>
           <ListItemIcon
             style={{ color: theme.palette.text.primary, opacity: "0.85" }}
           >
@@ -82,7 +106,7 @@ export const AppNavigationDrawer = () => {
           <ListItemText primary={"Github Profile"} />
         </ListItem>
 
-        <ListItem button>
+        <ListItem button onClick={(e) => openExternalLink(2)}>
           <ListItemIcon
             style={{ color: theme.palette.text.primary, opacity: "0.85" }}
           >
