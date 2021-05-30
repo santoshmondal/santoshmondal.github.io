@@ -13,7 +13,7 @@ export const ProfileSumaryContent = () => {
   const appState = useSelector((state) => state);
 
   return (
-    <Box p={2} px={2}>
+    <Box p={2} px={2} pb={1}>
       <Box color="primary.contrastText" fontWeight="bold">
         <Typography variant="h6">{appState.profile.title}</Typography>
       </Box>
@@ -35,11 +35,9 @@ export const ProfileBodyContent = () => {
   const appState = useSelector((state) => state);
 
   return (
-    <Box p={1} px={2}>
-      <Box color="primary.contrastText" px={2}>
-        <Typography variant="h6" style={{ fontWeight: "bold" }}>
-          Body
-        </Typography>
+    <Box p={1} px={2} pb={1}>
+      <Box color="primary.contrastText" fontWeight="bold">
+        <Typography variant="h6">Body</Typography>
       </Box>
     </Box>
   );
