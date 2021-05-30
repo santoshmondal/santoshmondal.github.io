@@ -23,8 +23,9 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     height: "100px",
+    alignItems: "flex-start",
     [theme.breakpoints.down("sm")]: {
-      height: "175px",
+      height: "120px",
     },
     backgroundColor: "#333330",
   },
@@ -46,7 +47,7 @@ export const IndexPage = () => {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="sticky">
         <Toolbar className={classes.toolbar}>
           <ToolbarContent></ToolbarContent>
         </Toolbar>

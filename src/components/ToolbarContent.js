@@ -63,104 +63,83 @@ export const ToolbarContent = () => {
   };
 
   return (
-    <Grid container>
+    <>
+      <IconButton
+        edge="start"
+        className={classes.menuButton}
+        color="inherit"
+        aria-label="open drawer"
+      >
+        <MenuIcon />
+      </IconButton>
+
+      <Box
+        flex="1"
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        height="1"
+      >
+        <Box textAlign="center">
+          <Typography
+            variant={matches ? "h5" : "h5"}
+            style={{ fontWeight: "inherit" }}
+          >
+            {appState.username}
+          </Typography>
+        </Box>
+
+        <Box textAlign="center">
+          <Typography variant={matches ? "body2" : "body1"}>
+            {appState.designation}
+          </Typography>
+        </Box>
+
+        <Box textAlign="center">
+          <Typography variant={matches ? "caption" : "caption"}>
+            {appState.headerRow3}
+          </Typography>
+        </Box>
+      </Box>
+
       <Hidden smDown>
-        <Grid item>
+        <Tooltip title="Email me at santosh.ece06@gmail.com">
           <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
+            onClick={(e) => openExternalLink(3)}
           >
-            <MenuIcon />
+            <EmailRoundedIcon />
           </IconButton>
-        </Grid>
+        </Tooltip>
+
+        <Tooltip title="LinkedIn Profile">
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+            onClick={(e) => openExternalLink(2)}
+          >
+            <Icon className="fab fa-linkedin" />
+          </IconButton>
+        </Tooltip>
+
+        <Tooltip title="Github Profile">
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+            onClick={(e) => openExternalLink(1)}
+          >
+            <Icon className="fab fa-github" />
+          </IconButton>
+        </Tooltip>
       </Hidden>
-
-      <Grid item xs>
-        <Box>
-          <Box textAlign="center">
-            <Typography
-              variant={matches ? "h5" : "h5"}
-              style={{ fontWeight: "inherit" }}
-            >
-              {appState.username}
-            </Typography>
-          </Box>
-
-          <Box textAlign="center">
-            <Typography variant={matches ? "body2" : "body1"}>
-              {appState.designation}
-            </Typography>
-          </Box>
-
-          <Box textAlign="center">
-            <Typography variant={matches ? "caption" : "caption"}>
-              {appState.headerRow3}
-            </Typography>
-          </Box>
-        </Box>
-      </Grid>
-
-      <Hidden smDown>
-        <Grid item>
-          <Tooltip title="Email me at santosh.ece06@gmail.com">
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-              onClick={(e) => openExternalLink(3)}
-            >
-              <EmailRoundedIcon />
-            </IconButton>
-          </Tooltip>
-
-          <Tooltip title="LinkedIn Profile">
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-              onClick={(e) => openExternalLink(2)}
-            >
-              <Icon className="fab fa-linkedin" />
-            </IconButton>
-          </Tooltip>
-
-          <Tooltip title="Github Profile">
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-              onClick={(e) => openExternalLink(1)}
-            >
-              <Icon className="fab fa-github" />
-            </IconButton>
-          </Tooltip>
-        </Grid>
-      </Hidden>
-
-      <Hidden mdUp>
-        <Box
-          style={{ background: "inherit" }}
-          position="fixed"
-          top={0}
-          left={16}
-        >
-          <Tooltip title="More Options">
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-            >
-              <MenuIcon />
-            </IconButton>
-          </Tooltip>
-        </Box>
-      </Hidden>
-    </Grid>
+    </>
   );
 };
