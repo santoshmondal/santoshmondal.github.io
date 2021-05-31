@@ -3,6 +3,7 @@ import "./IndexPage.css";
 import {
   AppBar,
   Box,
+  Fab,
   Grid,
   Hidden,
   makeStyles,
@@ -10,7 +11,7 @@ import {
   Toolbar,
   useTheme,
 } from "@material-ui/core";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { SidebarContent } from "./SidebarContent";
 import { ToolbarContent } from "./ToolbarContent";
 import {
@@ -20,6 +21,8 @@ import {
 } from "./ProfileBodyConent";
 import { useDispatch, useSelector } from "react-redux";
 import { AppNavigationDrawer } from "./AppNavigationDrawer";
+import { ScrollTop } from "../common/scrolltop/ScrollTop";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -33,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const IndexPage = () => {
+export const IndexPage = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const appState = useSelector((state) => state);
@@ -63,7 +66,7 @@ export const IndexPage = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <SwipeableDrawer
         anchor="left"
         open={appState.drawerOpen}
@@ -78,6 +81,7 @@ export const IndexPage = () => {
           <ToolbarContent></ToolbarContent>
         </Toolbar>
       </AppBar>
+      <Box id="back-to-top-anchor" />
 
       <Grid container>
         {/** Body Content for Small Device */}
@@ -153,6 +157,16 @@ export const IndexPage = () => {
           </Grid>
         </Hidden>
       </Grid>
-    </>
+
+      <ScrollTop {...props}>
+        <Fab
+          size="large"
+          aria-label="scroll back to top"
+          className={classes.backtotopFab}
+        >
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
+    </React.Fragment>
   );
 };
