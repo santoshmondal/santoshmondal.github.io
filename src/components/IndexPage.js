@@ -178,7 +178,15 @@ export const IndexPage = (props) => {
         autoHideDuration={6000}
         onClose={handleClose}
       >
-        <Alert onClose={handleClose} severity="info">
+        <Alert
+          onClose={handleClose}
+          severity="info"
+          icon={false}
+          style={{
+            backgroundColor: theme.palette.background.default,
+            color: theme.palette.text.primary,
+          }}
+        >
           {appState.welcome} &#128516;
         </Alert>
       </Snackbar>
