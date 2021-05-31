@@ -6,7 +6,9 @@ import {
   Grid,
   Hidden,
   makeStyles,
+  SwipeableDrawer,
   Toolbar,
+  useTheme,
 } from "@material-ui/core";
 import { useEffect } from "react";
 import { SidebarContent } from "./SidebarContent";
@@ -16,22 +18,26 @@ import {
   ProfileBodyContent1,
   ProfileSumaryContent,
 } from "./ProfileBodyConent";
+import { useDispatch, useSelector } from "react-redux";
+import { AppNavigationDrawer } from "./AppNavigationDrawer";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    color: theme.palette.primary.main,
-  },
   toolbar: {
     height: "100px",
+    alignItems: "flex-start",
     [theme.breakpoints.down("sm")]: {
-      height: "175px",
+      height: "120px",
     },
-    backgroundColor: "#333330",
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.text.primary,
   },
 }));
 
 export const IndexPage = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const appState = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const node = loadCSS(
@@ -44,69 +50,109 @@ export const IndexPage = () => {
     };
   }, []);
 
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    dispatch({ type: "TOGGLE_DRAWER" });
+  };
+
   return (
     <>
-      <AppBar position="static">
+      <SwipeableDrawer
+        anchor="left"
+        open={appState.drawerOpen}
+        onClose={toggleDrawer(false)}
+        onOpen={toggleDrawer(true)}
+      >
+        <AppNavigationDrawer />
+      </SwipeableDrawer>
+
+      <AppBar position="sticky">
         <Toolbar className={classes.toolbar}>
           <ToolbarContent></ToolbarContent>
         </Toolbar>
       </AppBar>
 
-      <Box>
-        <Grid container>
-          {/** Body Content for Small Device */}
-          <Hidden mdUp>
-            <Grid item xs={12} style={{ backgroundColor: "#3C3C39" }}>
-              <ProfileSumaryContent />
-              <ProfileBodyContent1 />
-              <ProfileBodyContent />
-            </Grid>
-          </Hidden>
-
-          {/* Left Body Content */}
+      <Grid container>
+        {/** Body Content for Small Device */}
+        <Hidden mdUp>
           <Grid
             item
             xs={12}
-            md={3}
-            style={{
-              backgroundColor: "#3C3C39",
-              borderRight: "1px solid rgba(255, 255, 255, 0.075)",
-            }}
+            style={{ backgroundColor: theme.palette.background.paper }}
           >
-            <SidebarContent left={true} />
+            <ProfileSumaryContent />
+            <ProfileBodyContent1 />
+            <ProfileBodyContent />
           </Grid>
+        </Hidden>
 
-          {/* Body Content For Medium and Large Device */}
-          <Hidden smDown>
-            <Grid item xs={12} md={6} style={{ backgroundColor: "#3C3C39" }}>
-              <ProfileSumaryContent />
-              <ProfileBodyContent1 />
-              <ProfileBodyContent />
-            </Grid>
-          </Hidden>
-
-          {/* Right  Content */}
-          <Grid
-            item
-            xs={12}
-            md={3}
-            style={{
-              backgroundColor: "#3C3C39",
-              borderLeft: "1px solid rgba(255, 255, 255, 0.075)",
-            }}
-          >
-            <SidebarContent />
-          </Grid>
-
-          {/** Body Content for Small Device */}
-          <Hidden xsUp>
-            <Grid item xs={12} style={{ backgroundColor: "#3C3C39" }}>
-              <ProfileBodyContent1 />
-              <ProfileBodyContent />
-            </Grid>
-          </Hidden>
+        {/* Left Body Content */}
+        <Grid
+          item
+          xs={12}
+          md={3}
+          style={{
+            backgroundColor: theme.palette.background.paper,
+            borderRight:
+              theme.palette.type === "dark"
+                ? "1px solid rgba(255, 255, 255, 0.075)"
+                : "1px solid rgba(0, 0, 0, 0.075)",
+          }}
+        >
+          <SidebarContent left={true} />
         </Grid>
-      </Box>
+
+        {/* Body Content For Medium and Large Device */}
+        <Hidden smDown>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            style={{
+              backgroundColor: theme.palette.background.paper,
+            }}
+          >
+            <ProfileSumaryContent />
+            <ProfileBodyContent1 />
+            <ProfileBodyContent />
+          </Grid>
+        </Hidden>
+
+        {/* Right  Content */}
+        <Grid
+          item
+          xs={12}
+          md={3}
+          style={{
+            backgroundColor: theme.palette.background.paper,
+            borderLeft:
+              theme.palette.type === "dark"
+                ? "1px solid rgba(255, 255, 255, 0.075)"
+                : "1px solid rgba(0, 0, 0, 0.075)",
+          }}
+        >
+          <SidebarContent />
+        </Grid>
+
+        {/** Body Content for Small Device */}
+        <Hidden xsUp>
+          <Grid
+            item
+            xs={12}
+            style={{ backgroundColor: theme.palette.background.paper }}
+          >
+            <ProfileBodyContent1 />
+            <ProfileBodyContent />
+          </Grid>
+        </Hidden>
+      </Grid>
     </>
   );
 };
