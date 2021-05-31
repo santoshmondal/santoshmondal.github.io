@@ -27,3 +27,8 @@
 
 - Switch between Dark / Light Theme
   `https://adityanaik.dev/blog/2020/05/20/material-ui-how-to-easily-set-up-dark-theme-toggle-in-react/`
+
+# Firebase Config Update
+
+- To avoid sharint the config in public repository, this file is not part of git repository.
+- If you are cloning this project in new location, make sure, create `src/config/fire.config.js` refer the content from firebase project console.

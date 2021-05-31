@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
-import { firebaseConfig } from "./config/firebase.config";
+import { firebaseConfig } from "./config/fire.config";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
