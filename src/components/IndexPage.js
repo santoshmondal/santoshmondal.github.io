@@ -180,7 +180,7 @@ export const IndexPage = (props) => {
           severity="info"
           icon={false}
           style={{
-            backgroundColor: theme.palette.background.default,
+            backgroundColor: theme.palette.background.paper,
             color: theme.palette.text.primary,
           }}
         >
