@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loadCSS } from "fg-loadcss";
 import "./IndexPage.css";
 import {
@@ -16,23 +16,17 @@ import {
 import { useEffect } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
-import MoreVertRoundedIcon from "@material-ui/icons/MoreVertRounded";
+import Brightness4RoundedIcon from "@material-ui/icons/Brightness4Rounded";
+import Brightness7RoundedIcon from "@material-ui/icons/Brightness7Rounded";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    color: theme.palette.primary.main,
-  },
-  toolbar: {
-    height: "100px",
-    backgroundColor: "#333330",
-  },
-}));
+const useStyles = makeStyles((theme) => ({}));
 
 export const ToolbarContent = () => {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const appState = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const node = loadCSS(
@@ -68,7 +62,9 @@ export const ToolbarContent = () => {
         edge="start"
         className={classes.menuButton}
         color="inherit"
+        style={{ opacity: "0.85" }}
         aria-label="open drawer"
+        onClick={(e) => dispatch({ type: "TOGGLE_DRAWER" })}
       >
         <MenuIcon />
       </IconButton>
@@ -80,7 +76,8 @@ export const ToolbarContent = () => {
         justifyContent="center"
         alignItems="center"
         height="1"
-        style={{ marginLeft: matches ? "0px" : "-16px" }}
+        mt={{ xs: 1, sm: 1, md: 0 }}
+        style={{ marginLeft: matches ? "32px" : "-16px" }}
       >
         <Box textAlign="center">
           <Typography
@@ -108,9 +105,9 @@ export const ToolbarContent = () => {
         <Tooltip title="Email me at santosh.ece06@gmail.com">
           <IconButton
             edge="start"
-            className={classes.menuButton}
             color="inherit"
-            aria-label="open drawer"
+            aria-label="mail to"
+            style={{ opacity: "0.85" }}
             onClick={(e) => openExternalLink(3)}
           >
             <EmailRoundedIcon />
@@ -120,9 +117,9 @@ export const ToolbarContent = () => {
         <Tooltip title="LinkedIn Profile">
           <IconButton
             edge="start"
-            className={classes.menuButton}
             color="inherit"
-            aria-label="open drawer"
+            aria-label="linkedin profile url"
+            style={{ opacity: "0.85" }}
             onClick={(e) => openExternalLink(2)}
           >
             <Icon className="fab fa-linkedin" />
@@ -132,12 +129,28 @@ export const ToolbarContent = () => {
         <Tooltip title="Github Profile">
           <IconButton
             edge="start"
-            className={classes.menuButton}
             color="inherit"
-            aria-label="open drawer"
+            aria-label="github profile"
             onClick={(e) => openExternalLink(1)}
+            style={{ opacity: "0.85" }}
           >
             <Icon className="fab fa-github" />
+          </IconButton>
+        </Tooltip>
+
+        <Tooltip title="Toggle Light and Dark Theme">
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="toggle dark and light theme"
+            style={{ opacity: "0.85" }}
+            onClick={(e) => dispatch({ type: "TOGGLE_THEME" })}
+          >
+            {appState.theme === "dark" ? (
+              <Brightness7RoundedIcon />
+            ) : (
+              <Brightness4RoundedIcon />
+            )}
           </IconButton>
         </Tooltip>
       </Hidden>

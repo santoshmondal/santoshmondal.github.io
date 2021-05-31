@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
     flexBasis: "45%",
     flexShrink: 0,
   },
@@ -31,62 +30,55 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const ProfileSumaryContent = () => {
+  const appState = useSelector((state) => state);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
-  const appState = useSelector((state) => state);
 
   return (
-    <Box p={2} px={2} pb={1}>
-      <Box color="primary.contrastText" fontWeight="bold">
+    <Box p={2} px={2} pb={1} color="text.primary">
+      <Box fontWeight="bold">
         <Typography variant="h6">{appState.profile.title}</Typography>
       </Box>
 
-      <Box
-        color="primary.contrastText"
-        textAlign="justify"
-        px={!matches ? 0 : 0}
-        style={{ opacity: 0.9 }}
-      >
-        <Typography variant="caption">{appState.profile.summary}</Typography>
+      <Box textAlign="justify" style={{ opacity: 0.9 }}>
+        <Typography variant={matches ? "body2" : "caption"}>
+          {appState.profile.summary}
+        </Typography>
       </Box>
     </Box>
   );
 };
 
 export const ProfileBodyContent = () => {
-  const theme = useTheme();
   const classes = useStyles();
-  const matches = useMediaQuery(theme.breakpoints.up("sm"));
+  const theme = useTheme();
   const employment = useSelector((state) => state.profile.employment);
 
   return (
-    <Box p={1} px={2} pb={1}>
-      <Box color="primary.contrastText" fontWeight="bold" mb={1}>
+    <Box p={1} px={2} pb={1} color="text.primary">
+      <Box fontWeight="bold" mb={1}>
         <Typography variant="h6">{employment.title}</Typography>
       </Box>
 
       {[...employment.list].map((item, index) => (
         <Accordion
           key={index}
-          style={{ background: "#3C3C39", color: theme.palette.common.white }}
+          style={{
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
+          }}
         >
           <AccordionSummary
             expandIcon={
-              <ExpandMoreIcon style={{ color: theme.palette.common.white }} />
+              <ExpandMoreIcon style={{ color: theme.palette.text.primary }} />
             }
           >
             <Box>
               <Typography className={classes.heading}>{item.etitle}</Typography>
-              <Typography
-                className={classes.secondaryHeading}
-                style={{ color: theme.palette.grey[400] }}
-              >
+              <Typography className={classes.secondaryHeading}>
                 {item.esubtitle2}
               </Typography>
-              <Typography
-                className={classes.secondaryHeading}
-                style={{ color: theme.palette.grey[400] }}
-              >
+              <Typography className={classes.secondaryHeading}>
                 {item.esubtitle1}
               </Typography>
             </Box>
@@ -113,15 +105,15 @@ export const ProfileBodyContent1 = () => {
 };
 
 const CommonListBodyContent = ({ refItem }) => {
-  const theme = useTheme();
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
-    <Box p={1} px={2} pb={1}>
-      <Box color="primary.contrastText" fontWeight="bold">
+    <Box p={1} px={2} pb={1} color="text.primary">
+      <Box fontWeight="bold">
         <Typography variant="h6">{refItem.title}</Typography>
       </Box>
-      <Box color="primary.contrastText" style={{ opacity: 0.85 }}>
+      <Box>
         <List
           component="nav"
           className={classes.root}
@@ -133,8 +125,8 @@ const CommonListBodyContent = ({ refItem }) => {
               <ListItemIcon>
                 <StarIcon
                   style={{
-                    color: theme.palette.common.white,
                     fontSize: "large",
+                    color: theme.palette.text.primary,
                   }}
                 />
               </ListItemIcon>

@@ -4,6 +4,8 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 
 const initState = {
+  theme: "dark",
+  drawerOpen: false,
   title: "Welcome to My Profile, Santosh Mondal",
   message: "Work in Progress...!",
   landingTitle: "Landing page title",
@@ -160,6 +162,12 @@ const initState = {
 
 const rootReducer = (state = initState, action) => {
   switch (action.type) {
+    case "TOGGLE_THEME":
+      const toggleTheme = state.theme === "dark" ? "light" : "dark";
+      return { ...state, theme: toggleTheme };
+    case "TOGGLE_DRAWER":
+      const drawerOpen = state.drawerOpen === false ? true : false;
+      return { ...state, drawerOpen };
     default:
       return state;
   }
