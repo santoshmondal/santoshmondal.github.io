@@ -3,6 +3,11 @@ import ReactDOM from "react-dom";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 
+import firebase from "firebase/app";
+import "firebase/analytics";
+import "firebase/auth";
+import { firebaseConfig } from "./config/firebase.config";
+
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 
@@ -12,6 +17,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import "./index.css";
 import App from "./App";
 import { store } from "./redux/store";
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>
