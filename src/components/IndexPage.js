@@ -55,9 +55,6 @@ export const IndexPage = (props) => {
     };
   }, []);
 
-  // Display Welcome Alert
-  useEffect(() => {}, []);
-
   const toggleDrawer = (open) => (event) => {
     if (
       event &&
