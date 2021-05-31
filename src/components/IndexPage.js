@@ -100,7 +100,7 @@ export const IndexPage = (props) => {
           <Grid
             item
             xs={12}
-            style={{ backgroundColor: theme.palette.background.paper }}
+            style={{ backgroundColor: theme.palette.background.default }}
           >
             <ProfileSumaryContent />
             <ProfileBodyContent1 />
@@ -114,7 +114,7 @@ export const IndexPage = (props) => {
           xs={12}
           md={3}
           style={{
-            backgroundColor: theme.palette.background.paper,
+            backgroundColor: theme.palette.background.default,
             borderRight:
               theme.palette.type === "dark"
                 ? "1px solid rgba(255, 255, 255, 0.075)"
@@ -131,7 +131,7 @@ export const IndexPage = (props) => {
             xs={12}
             md={6}
             style={{
-              backgroundColor: theme.palette.background.paper,
+              backgroundColor: theme.palette.background.default,
             }}
           >
             <ProfileSumaryContent />
@@ -146,7 +146,7 @@ export const IndexPage = (props) => {
           xs={12}
           md={3}
           style={{
-            backgroundColor: theme.palette.background.paper,
+            backgroundColor: theme.palette.background.default,
             borderLeft:
               theme.palette.type === "dark"
                 ? "1px solid rgba(255, 255, 255, 0.075)"

@@ -40,7 +40,13 @@ export const ProfileSumaryContent = () => {
         <Typography variant="h6">{appState.profile.title}</Typography>
       </Box>
 
-      <Box textAlign="justify" style={{ opacity: 0.9 }}>
+      <Box
+        textAlign="justify"
+        style={{ opacity: 0.9 }}
+        p={1}
+        borderRadius={4}
+        bgcolor="background.paper"
+      >
         <Typography variant={matches ? "body2" : "caption"}>
           {appState.profile.summary}
         </Typography>
@@ -113,7 +119,7 @@ const CommonListBodyContent = ({ refItem }) => {
       <Box fontWeight="bold">
         <Typography variant="h6">{refItem.title}</Typography>
       </Box>
-      <Box>
+      <Box bgcolor="background.paper" borderRadius={4}>
         <List
           component="nav"
           className={classes.root}
