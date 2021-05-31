@@ -7,11 +7,12 @@ import {
   Grid,
   Hidden,
   makeStyles,
+  Snackbar,
   SwipeableDrawer,
   Toolbar,
   useTheme,
 } from "@material-ui/core";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { SidebarContent } from "./SidebarContent";
 import { ToolbarContent } from "./ToolbarContent";
 import {
@@ -23,6 +24,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppNavigationDrawer } from "./AppNavigationDrawer";
 import { ScrollTop } from "../common/scrolltop/ScrollTop";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import { Alert } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -53,6 +55,9 @@ export const IndexPage = (props) => {
     };
   }, []);
 
+  // Display Welcome Alert
+  useEffect(() => {}, []);
+
   const toggleDrawer = (open) => (event) => {
     if (
       event &&
@@ -63,6 +68,15 @@ export const IndexPage = (props) => {
     }
 
     dispatch({ type: "TOGGLE_DRAWER" });
+  };
+
+  const [open, setOpen] = useState(true);
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
@@ -157,6 +171,17 @@ export const IndexPage = (props) => {
           </Grid>
         </Hidden>
       </Grid>
+
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="info">
+          {appState.welcome} &#128516;
+        </Alert>
+      </Snackbar>
 
       <ScrollTop {...props}>
         <Fab

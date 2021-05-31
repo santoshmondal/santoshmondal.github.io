@@ -62,14 +62,9 @@ export const SidebarContent = ({ left }) => {
               </Box>
             ))}
 
-            {/** No Divider After the Last Element */}
-            {appState.sideItemList.filter((ffitem) => ffitem.left === left)
-              .length !==
-              index + 1 && (
-              <Box mt={1}>
-                <Divider />
-              </Box>
-            )}
+            <Box mt={1}>
+              <Divider />
+            </Box>
           </Box>
         ))}
     </Box>

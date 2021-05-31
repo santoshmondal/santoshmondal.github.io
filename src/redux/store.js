@@ -6,6 +6,7 @@ import logger from "redux-logger";
 const initState = {
   theme: "dark",
   drawerOpen: false,
+  welcome: "Welcome to My Profile ",
   title: "Welcome to My Profile, Santosh Mondal",
   message: "Work in Progress...!",
   landingTitle: "Landing page title",
