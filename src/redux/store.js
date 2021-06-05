@@ -116,13 +116,13 @@ const initState = {
           id: 1,
           etitle: "Koeroom.Tech",
           esubtitle1: "Founder",
-          esubtitle2: "Jan 2021 - Present",
+          esubtitle2: "Mar 2019 - Present",
         },
         {
           id: 2,
           etitle: "Affixus Systems",
           esubtitle1: "Founder",
-          esubtitle2: "Dec 2015 - Feb 2018",
+          esubtitle2: "Dec 2015 - Mar 2019",
         },
         {
           id: 3,
