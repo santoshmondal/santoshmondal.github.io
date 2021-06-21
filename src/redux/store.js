@@ -45,6 +45,7 @@ const initState = {
       subItemList: [
         { subtitle: "Java", rating: 5, icon: "fab fa-java" },
         { subtitle: "NodeJS", rating: 5, icon: "fab fa-node" },
+        { subtitle: "TypeScript", rating: 5, icon: "fab fa-tumblr" },
         { subtitle: "Spring Boot", rating: 5, icon: "fas fa-leaf" },
         { subtitle: "MicroServices", rating: 4, icon: "fas fa-network-wired" },
         { subtitle: "Python", rating: 3, icon: "fab fa-python" },
@@ -57,7 +58,6 @@ const initState = {
         { subtitle: "Postgres", rating: 4, icon: "fas fa-database" },
         { subtitle: "MongoDB", rating: 4, icon: "fab fa-envira" },
         { subtitle: "Elastic", rating: 4, icon: "fas fa-database" },
-        { subtitle: "Firestore", rating: 4, icon: "fas fa-folder-open" },
       ],
     },
     {

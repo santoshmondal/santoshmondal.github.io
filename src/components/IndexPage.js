@@ -67,7 +67,7 @@ export const IndexPage = (props) => {
     dispatch({ type: "TOGGLE_DRAWER" });
   };
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -75,6 +75,10 @@ export const IndexPage = (props) => {
 
     setOpen(false);
   };
+
+  useEffect(() => {
+    setTimeout(() => setOpen(true), 2500);
+  }, []);
 
   return (
     <React.Fragment>
