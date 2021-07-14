@@ -114,7 +114,7 @@ const initState = {
       list: [
         {
           id: 1,
-          etitle: "Koeroom.Tech",
+          etitle: "Koderoom.Tech",
           esubtitle1: "Founder",
           esubtitle2: "Mar 2019 - Present",
         },
