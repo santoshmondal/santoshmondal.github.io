@@ -113,10 +113,16 @@ const initState = {
       title: "Employment History",
       list: [
         {
+          id: 0,
+          etitle: "Verifone",
+          esubtitle1: "Senior Architect",
+          esubtitle2: "July 2021 - Present",
+        },
+        {
           id: 1,
           etitle: "Koderoom.Tech",
           esubtitle1: "Founder",
-          esubtitle2: "Mar 2019 - Present",
+          esubtitle2: "Mar 2019 - June 2021",
         },
         {
           id: 2,
@@ -157,6 +163,7 @@ const initState = {
     industries: {
       title: "Domain",
       list: [
+        { id: 0, title: "Electronic Payment" },
         { id: 1, title: "Law Domain" },
         { id: 2, title: "ERP - In Distribution" },
         { id: 3, title: "Sports -  Cricket & Basketball" },
