@@ -141,9 +141,15 @@ const initState = {
     expertise: {
       title: "Expertise",
       list: [
+        { id: 0, title: "Microservice Architecture" },
+        { id: 0, title: "Serverless Architecture" },
+        {
+          id: 0,
+          title: "Event Driven Scalable Application Development",
+        },
+        { id: 0, title: "ELK Stack Architecure" },
         { id: 0, title: "Full Stack End to End Development" },
         { id: 1, title: "Cross Platform Mobile Application Development" },
-        { id: 2, title: "Web Application Development" },
         { id: 3, title: "Progressive Web Application Development" },
         { id: 4, title: "Android Native Development" },
       ],
