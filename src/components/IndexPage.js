@@ -3,14 +3,16 @@ import "./IndexPage.css";
 import {
   AppBar,
   Box,
+  Fab,
   Grid,
   Hidden,
   makeStyles,
+  Snackbar,
   SwipeableDrawer,
   Toolbar,
   useTheme,
 } from "@material-ui/core";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { SidebarContent } from "./SidebarContent";
 import { ToolbarContent } from "./ToolbarContent";
 import {
@@ -20,6 +22,9 @@ import {
 } from "./ProfileBodyConent";
 import { useDispatch, useSelector } from "react-redux";
 import { AppNavigationDrawer } from "./AppNavigationDrawer";
+import { ScrollTop } from "../common/scrolltop/ScrollTop";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import { Alert } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -33,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const IndexPage = () => {
+export const IndexPage = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const appState = useSelector((state) => state);
@@ -62,8 +67,21 @@ export const IndexPage = () => {
     dispatch({ type: "TOGGLE_DRAWER" });
   };
 
+  const [open, setOpen] = useState(false);
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    setTimeout(() => setOpen(true), 2500);
+  }, []);
+
   return (
-    <>
+    <React.Fragment>
       <SwipeableDrawer
         anchor="left"
         open={appState.drawerOpen}
@@ -78,6 +96,7 @@ export const IndexPage = () => {
           <ToolbarContent></ToolbarContent>
         </Toolbar>
       </AppBar>
+      <Box id="back-to-top-anchor" />
 
       <Grid container>
         {/** Body Content for Small Device */}
@@ -85,7 +104,7 @@ export const IndexPage = () => {
           <Grid
             item
             xs={12}
-            style={{ backgroundColor: theme.palette.background.paper }}
+            style={{ backgroundColor: theme.palette.background.default }}
           >
             <ProfileSumaryContent />
             <ProfileBodyContent1 />
@@ -99,7 +118,7 @@ export const IndexPage = () => {
           xs={12}
           md={3}
           style={{
-            backgroundColor: theme.palette.background.paper,
+            backgroundColor: theme.palette.background.default,
             borderRight:
               theme.palette.type === "dark"
                 ? "1px solid rgba(255, 255, 255, 0.075)"
@@ -116,7 +135,7 @@ export const IndexPage = () => {
             xs={12}
             md={6}
             style={{
-              backgroundColor: theme.palette.background.paper,
+              backgroundColor: theme.palette.background.default,
             }}
           >
             <ProfileSumaryContent />
@@ -131,7 +150,7 @@ export const IndexPage = () => {
           xs={12}
           md={3}
           style={{
-            backgroundColor: theme.palette.background.paper,
+            backgroundColor: theme.palette.background.default,
             borderLeft:
               theme.palette.type === "dark"
                 ? "1px solid rgba(255, 255, 255, 0.075)"
@@ -153,6 +172,35 @@ export const IndexPage = () => {
           </Grid>
         </Hidden>
       </Grid>
-    </>
+
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <Alert
+          onClose={handleClose}
+          severity="info"
+          icon={false}
+          style={{
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
+          }}
+        >
+          {appState.welcome} &#128516;
+        </Alert>
+      </Snackbar>
+
+      <ScrollTop {...props}>
+        <Fab
+          size="large"
+          aria-label="scroll back to top"
+          className={classes.backtotopFab}
+        >
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
+    </React.Fragment>
   );
 };

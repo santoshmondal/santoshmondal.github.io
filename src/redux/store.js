@@ -6,6 +6,7 @@ import logger from "redux-logger";
 const initState = {
   theme: "dark",
   drawerOpen: false,
+  welcome: "Hello Visitor, Welcome to My Profile ",
   title: "Welcome to My Profile, Santosh Mondal",
   message: "Work in Progress...!",
   landingTitle: "Landing page title",
@@ -44,6 +45,7 @@ const initState = {
       subItemList: [
         { subtitle: "Java", rating: 5, icon: "fab fa-java" },
         { subtitle: "NodeJS", rating: 5, icon: "fab fa-node" },
+        { subtitle: "TypeScript", rating: 5, icon: "fab fa-tumblr" },
         { subtitle: "Spring Boot", rating: 5, icon: "fas fa-leaf" },
         { subtitle: "MicroServices", rating: 4, icon: "fas fa-network-wired" },
         { subtitle: "Python", rating: 3, icon: "fab fa-python" },
@@ -56,7 +58,6 @@ const initState = {
         { subtitle: "Postgres", rating: 4, icon: "fas fa-database" },
         { subtitle: "MongoDB", rating: 4, icon: "fab fa-envira" },
         { subtitle: "Elastic", rating: 4, icon: "fas fa-database" },
-        { subtitle: "Firestore", rating: 4, icon: "fas fa-folder-open" },
       ],
     },
     {
@@ -107,21 +108,27 @@ const initState = {
   profile: {
     title: "PROFESSIONAL SUMMARY",
     summary:
-      "Passionate Software Architect and Founder of two company, 15+ years of experience in building robust and highly scalable applications across the E-commerce, Sports, Education and Law domain. With strong expertise in customer collaboration, requirement analysis, high level design and development using frontend and backend technologies.",
+      "Passionate Software Architect and Founder of two company, 15+ years of experience in building robust and highly scalable applications across the E-commerce, Sports, Education, Law, Electronic Payment Domain. With strong expertise in customer collaboration, requirement analysis, high level design and development using frontend and backend technologies.",
     employment: {
       title: "Employment History",
       list: [
         {
+          id: 0,
+          etitle: "Verifone",
+          esubtitle1: "Senior Architect",
+          esubtitle2: "July 2021 - Present",
+        },
+        {
           id: 1,
-          etitle: "Koeroom.Tech",
+          etitle: "Koderoom.Tech",
           esubtitle1: "Founder",
-          esubtitle2: "Jan 2021 - Present",
+          esubtitle2: "Mar 2019 - June 2021",
         },
         {
           id: 2,
           etitle: "Affixus Systems",
           esubtitle1: "Founder",
-          esubtitle2: "Dec 2015 - Feb 2018",
+          esubtitle2: "Dec 2015 - Mar 2019",
         },
         {
           id: 3,
@@ -140,9 +147,15 @@ const initState = {
     expertise: {
       title: "Expertise",
       list: [
+        { id: 0, title: "Microservice Architecture" },
+        { id: 0, title: "Serverless Architecture" },
+        {
+          id: 0,
+          title: "Event Driven Scalable Application Development",
+        },
+        { id: 0, title: "ELK Stack Architecure" },
         { id: 0, title: "Full Stack End to End Development" },
         { id: 1, title: "Cross Platform Mobile Application Development" },
-        { id: 2, title: "Web Application Development" },
         { id: 3, title: "Progressive Web Application Development" },
         { id: 4, title: "Android Native Development" },
       ],
@@ -150,7 +163,8 @@ const initState = {
     industries: {
       title: "Domain",
       list: [
-        { id: 1, title: "Law & Legal Practice" },
+        { id: 0, title: "Electronic Payment" },
+        { id: 1, title: "Law Domain" },
         { id: 2, title: "ERP - In Distribution" },
         { id: 3, title: "Sports -  Cricket & Basketball" },
         { id: 4, title: "Education - Learning Platform" },

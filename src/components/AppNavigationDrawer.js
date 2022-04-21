@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: 275,
   },
   fullList: {
     width: "auto",

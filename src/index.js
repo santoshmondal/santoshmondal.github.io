@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
+import "firebase/performance";
 import { firebaseConfig } from "./config/fire.config";
 
 import { BrowserRouter as Router } from "react-router-dom";
@@ -20,6 +21,8 @@ import { store } from "./redux/store";
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+firebase.performance();
 
 ReactDOM.render(
   <React.StrictMode>
