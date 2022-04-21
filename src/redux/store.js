@@ -65,9 +65,9 @@ const initState = {
       left: true,
       subItemList: [
         { subtitle: "AWS", rating: 4, icon: "fab fa-aws" },
+        { subtitle: "GCP", rating: 4, icon: "fab fa-google" },
+        { subtitle: "Cloud Native", rating: 4, icon: "fa fa-cloud" },
         { subtitle: "Firebase", rating: 4, icon: "fas fa-folder-open" },
-        { subtitle: "Google Cloud", rating: 4, icon: "fab fa-google" },
-        { subtitle: "Mircosoft Azure", rating: 3, icon: "fab fa-microsoft" },
       ],
     },
 
@@ -100,7 +100,8 @@ const initState = {
       title: "Devops",
       subItemList: [
         { subtitle: "Docker", rating: 5, icon: "fab fa-docker" },
-        { subtitle: "Jenkins", rating: 4, icon: "fab fa-jenkins" },
+        { subtitle: "Kubernetes", rating: 4, icon: "fab fa-korvue" },
+        { subtitle: "Jenkins", rating: 4, icon: "fab fa-docker" },
         { subtitle: "Github Action", rating: 4, icon: "fab fa-github" },
       ],
     },
