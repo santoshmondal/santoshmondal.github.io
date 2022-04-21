@@ -149,8 +149,8 @@ const initState = {
       title: "Expertise",
       list: [
         { id: 0, title: "Microservice Architecture" },
-        { id: 0, title: "Serverless Architecture" },
         { id: 0, title: "Cloud Native Application Development" },
+        { id: 0, title: "Serverless Architecture" },
         {
           id: 0,
           title: "Event Driven Scalable Application Development",
