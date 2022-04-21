@@ -101,7 +101,7 @@ const initState = {
       subItemList: [
         { subtitle: "Docker", rating: 5, icon: "fab fa-docker" },
         { subtitle: "Kubernetes", rating: 4, icon: "fab fa-korvue" },
-        { subtitle: "Jenkins", rating: 4, icon: "fab fa-docker" },
+        { subtitle: "Jenkins", rating: 4, icon: "fab fa-jenkins" },
         { subtitle: "Github Action", rating: 4, icon: "fab fa-github" },
       ],
     },
