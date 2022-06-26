@@ -113,17 +113,17 @@ const initState = {
     employment: {
       title: "Employment History",
       list: [
-        {
+        /*{
           id: 0,
           etitle: "Verifone",
           esubtitle1: "Senior Architect",
           esubtitle2: "July 2021 - Present",
-        },
+        },*/
         {
           id: 1,
           etitle: "Koderoom.Tech",
           esubtitle1: "Founder",
-          esubtitle2: "Mar 2019 - June 2021",
+          esubtitle2: "Mar 2019 - Present",
         },
         {
           id: 2,
