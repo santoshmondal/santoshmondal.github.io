@@ -44,7 +44,13 @@ function App(props) {
       </SwipeableDrawer>
 
       <AppBar position="sticky">
-        <Toolbar>
+        <Toolbar
+          sx={{
+            height: { xs: "120px", sm: "110px" },
+            alignItems: "flex-start",
+            mt: 1,
+          }}
+        >
           <ToolbarContent />
         </Toolbar>
       </AppBar>
