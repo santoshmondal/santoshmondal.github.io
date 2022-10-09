@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import { useTheme } from "@emotion/react";
+import { useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
