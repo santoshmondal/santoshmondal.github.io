@@ -116,8 +116,9 @@ const dataSlice = createSlice({
     ],
     profile: {
       title: "PROFESSIONAL SUMMARY",
-      summary:
-        "Passionate Software Architect and Founder of two company, 15+ years of experience in building robust and highly scalable applications across the E-commerce, Sports, Education, Law, Electronic Payment Domain. With strong expertise in customer collaboration, requirement analysis, high level design and development using frontend and backend technologies.",
+      summary: `Passionate Software Architect and Founder of two company, ${
+        new Date().getFullYear() - 2006
+      }+ years of experience in building robust and highly scalable applications across the E-commerce, Sports, Education, Law, Electronic Payment Domain. With strong expertise in customer collaboration, requirement analysis, high level design and development using frontend and backend technologies.`,
       employment: {
         title: "Employment History",
         list: [
