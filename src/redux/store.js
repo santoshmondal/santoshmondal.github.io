@@ -65,9 +65,9 @@ const initState = {
       left: true,
       subItemList: [
         { subtitle: "AWS", rating: 4, icon: "fab fa-aws" },
+        { subtitle: "GCP", rating: 4, icon: "fab fa-google" },
+        { subtitle: "Cloud Native", rating: 4, icon: "fa fa-cloud" },
         { subtitle: "Firebase", rating: 4, icon: "fas fa-folder-open" },
-        { subtitle: "Google Cloud", rating: 4, icon: "fab fa-google" },
-        { subtitle: "Mircosoft Azure", rating: 3, icon: "fab fa-microsoft" },
       ],
     },
 
@@ -100,6 +100,7 @@ const initState = {
       title: "Devops",
       subItemList: [
         { subtitle: "Docker", rating: 5, icon: "fab fa-docker" },
+        { subtitle: "Kubernetes", rating: 4, icon: "fab fa-korvue" },
         { subtitle: "Jenkins", rating: 4, icon: "fab fa-jenkins" },
         { subtitle: "Github Action", rating: 4, icon: "fab fa-github" },
       ],
@@ -112,17 +113,17 @@ const initState = {
     employment: {
       title: "Employment History",
       list: [
-        {
+        /*{
           id: 0,
           etitle: "Verifone",
           esubtitle1: "Senior Architect",
           esubtitle2: "July 2021 - Present",
-        },
+        },*/
         {
           id: 1,
           etitle: "Koderoom.Tech",
           esubtitle1: "Founder",
-          esubtitle2: "Mar 2019 - June 2021",
+          esubtitle2: "Mar 2019 - Present",
         },
         {
           id: 2,
@@ -148,6 +149,7 @@ const initState = {
       title: "Expertise",
       list: [
         { id: 0, title: "Microservice Architecture" },
+        { id: 0, title: "Cloud Native Application Development" },
         { id: 0, title: "Serverless Architecture" },
         {
           id: 0,
