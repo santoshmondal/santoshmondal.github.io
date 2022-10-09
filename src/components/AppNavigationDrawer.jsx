@@ -13,6 +13,8 @@ import { toggleDrawerAction, toggleThemeAction } from "../store/apputil.slice";
 
 import Brightness4RoundedIcon from "@mui/icons-material/Brightness4Rounded";
 import Brightness7RoundedIcon from "@mui/icons-material/Brightness7Rounded";
+import MailRoundedIcon from "@mui/icons-material/MailRounded";
+import PhoneIphoneRoundedIcon from "@mui/icons-material/PhoneIphoneRounded";
 
 const AppNavigationDrawer = () => {
   const theme = useTheme();
@@ -51,35 +53,50 @@ const AppNavigationDrawer = () => {
   };
 
   return (
-    <Paper>
-      <List>
-        <ListItemButton onClick={(e) => dispatch(toggleThemeAction())}>
-          <ListItemIcon>
-            {theme.palette.mode === "dark" ? (
-              <Brightness7RoundedIcon />
-            ) : (
-              <Brightness4RoundedIcon />
-            )}
-          </ListItemIcon>
-          <ListItemText primary={"Toggle Theme"} />
-        </ListItemButton>
-      </List>
+    <Box width={{ xs: "275px", sm: "300px" }}>
+      <Paper sx={{ height: "100vh" }}>
+        <List>
+          <ListItemButton onClick={(e) => dispatch(toggleThemeAction())}>
+            <ListItemIcon>
+              {theme.palette.mode === "dark" ? (
+                <Brightness7RoundedIcon />
+              ) : (
+                <Brightness4RoundedIcon />
+              )}
+            </ListItemIcon>
+            <ListItemText primary={"Toggle Theme"} />
+          </ListItemButton>
 
-      <Box
-        sx={{ height: "97vh" }}
-        width={{ xs: "250px", sm: "275px" }}
-        onClick={() => dispatch(toggleDrawerAction(false))}
-        onKeyDown={() => dispatch(toggleDrawerAction(false))}
-      >
-        <h1>Hello World</h1>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eaque
-          voluptatibus nemo maiores pariatur? Iusto minus voluptas illum facere
-          tempore beatae vitae? Qui blanditiis doloribus necessitatibus
-          exercitationem eveniet. Veniam, dolores?
-        </div>
-      </Box>
-    </Paper>
+          <ListItemButton onClick={(e) => openExternalLink(3)}>
+            <ListItemIcon>
+              <MailRoundedIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Email/Inbox Me"} />
+          </ListItemButton>
+
+          <ListItemButton onClick={(e) => openExternalLink(1)}>
+            <ListItemIcon>
+              <MailRoundedIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Github Profile"} />
+          </ListItemButton>
+
+          <ListItemButton onClick={(e) => openExternalLink(2)}>
+            <ListItemIcon>
+              <MailRoundedIcon />
+            </ListItemIcon>
+            <ListItemText primary={"LinkedIn Profile"} />
+          </ListItemButton>
+
+          <ListItemButton>
+            <ListItemIcon>
+              <PhoneIphoneRoundedIcon />
+            </ListItemIcon>
+            <ListItemText primary={"+91-9323791976"} />
+          </ListItemButton>
+        </List>
+      </Paper>
+    </Box>
   );
 };
 
