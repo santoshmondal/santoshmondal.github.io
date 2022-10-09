@@ -25,6 +25,7 @@ import {
   ProfileSumaryContent,
 } from "./components/ProfileBodyConent";
 import { SidebarContent } from "./components/SidebarContent";
+import WelcomeSnackbar from "./components/WelcomeSnackbar";
 
 function App(props) {
   let theme = useTheme();
@@ -116,6 +117,8 @@ function App(props) {
           </Grid>
         </Hidden>
       </Grid>
+
+      <WelcomeSnackbar />
 
       <ScrollTop {...props}>
         <Fab size="small" aria-label="scroll back to top">
