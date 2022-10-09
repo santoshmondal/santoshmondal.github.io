@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.Fragment>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router} />
     </ThemeProvider>
   </React.Fragment>
 );
