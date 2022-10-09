@@ -85,7 +85,16 @@ function App(props) {
 
         {/* Hidden In Smaller Screen */}
         <Hidden mdDown>
-          <Grid xs={12} md={3}>
+          <Grid
+            xs={12}
+            md={3}
+            sx={{
+              borderRight:
+                theme.palette.mode === "dark"
+                  ? "1px solid rgba(255, 255, 255, 0.075)"
+                  : "1px solid rgba(0, 0, 0, 0.075)",
+            }}
+          >
             <SidebarContent left={true} />
           </Grid>
           <Grid xs={12} md={6}>
@@ -93,7 +102,16 @@ function App(props) {
             <ProfileBodyContent1 />
             <ProfileBodyContent />
           </Grid>
-          <Grid xs={12} md={3}>
+          <Grid
+            xs={12}
+            md={3}
+            sx={{
+              borderLeft:
+                theme.palette.mode === "dark"
+                  ? "1px solid rgba(255, 255, 255, 0.075)"
+                  : "1px solid rgba(0, 0, 0, 0.075)",
+            }}
+          >
             <SidebarContent />
           </Grid>
         </Hidden>

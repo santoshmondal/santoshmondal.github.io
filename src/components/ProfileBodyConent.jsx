@@ -23,19 +23,13 @@ export const ProfileSumaryContent = () => {
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (
-    <Box p={2} px={2} pb={1} color="text.primary">
+    <Box p={2} px={2} pb={1}>
       <Box fontWeight="bold">
         <Typography variant="h6">{dataStore.profile.title}</Typography>
       </Box>
 
-      <Box
-        textAlign="justify"
-        sx={{ opacity: 0.9 }}
-        p={1}
-        borderRadius={4}
-        bgcolor="background.paper"
-      >
-        <Typography variant={matches ? "body2" : "caption"}>
+      <Box textAlign="justify" sx={{ opacity: 0.9 }} pt={1} borderRadius={4}>
+        <Typography fontFamily={"fontPrimary"}>
           {dataStore.profile.summary}
         </Typography>
       </Box>
@@ -48,7 +42,7 @@ export const ProfileBodyContent = () => {
   const { employment } = useSelector((state) => state.dataStore.profile);
 
   return (
-    <Box p={1} px={2} pb={1} color="text.primary">
+    <Box p={1} px={2} pb={1}>
       <Box fontWeight="bold" mb={1}>
         <Typography variant="h6">{employment.title}</Typography>
       </Box>

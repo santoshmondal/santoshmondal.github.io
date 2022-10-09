@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { createTheme, responsiveFontSizes } from "@mui/material";
-import { amber } from "@mui/material/colors";
+import { amber, grey } from "@mui/material/colors";
 
 import App from "./App";
 import ErrorPage from "./components/ErrorPage";
@@ -21,7 +21,9 @@ darkTheme = responsiveFontSizes(darkTheme);
 let lightTheme = createTheme({
   palette: {
     mode: "light",
-    primary: amber,
+    primary: {
+      main: grey[200],
+    },
   },
   typography: {
     fontPrimary: "gabriela",
