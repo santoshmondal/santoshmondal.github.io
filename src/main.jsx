@@ -14,6 +14,18 @@ import store from "./store/store";
 import { darkTheme, lightTheme, router } from "./app.init";
 import { CssBaseline } from "@mui/material";
 
+import { initializeApp } from "firebase/app";
+import { getPerformance } from "firebase/performance";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
+import { firebaseConfig } from "./config/fire.config";
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+getPerformance(app);
+getAnalytics(app);
+getAuth(app);
+
 const MyThemeProvider = (props) => {
   const { apputilStore } = useSelector((state) => state);
   return (
