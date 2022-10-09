@@ -28,16 +28,9 @@ export const SidebarContent = ({ left }) => {
         .filter((fitem) => fitem.left === left)
         .map((item, index) => (
           <React.Fragment key={index}>
-            <Box fontWeight="bold" style={{ fontSize: "large" }}>
-              {item.title}
-            </Box>
+            <Box fontWeight="bold">{item.title}</Box>
 
-            <Box
-              mb={1}
-              bgcolor={!matches ? "background.paper" : "inherit"}
-              borderRadius={4}
-              p={1}
-            >
+            <Box mb={1} borderRadius={4} p={1}>
               {[...item.subItemList].map((subitem, index1) => (
                 <Box
                   key={index1}
@@ -48,11 +41,8 @@ export const SidebarContent = ({ left }) => {
                   alignItems="center"
                 >
                   <Box display="flex" alignItems="center">
-                    <Icon
-                      className={subitem.icon}
-                      style={{ fontSize: "small" }}
-                    />
-                    <Box ml={1} style={{ fontSize: "small" }}>
+                    <Icon className={subitem.icon} sx={{ fontSize: "small" }} />
+                    <Box ml={1} sx={{ fontSize: "small" }}>
                       {subitem.subtitle}
                     </Box>
                   </Box>
@@ -61,7 +51,7 @@ export const SidebarContent = ({ left }) => {
                       <Box key={skillIndex}>
                         {skillItem <= subitem.rating ? (
                           <LensRounded
-                            style={{
+                            sx={{
                               fontSize: "xx-small",
                               marginLeft: "4px",
                               opacity: ".75",
@@ -69,7 +59,7 @@ export const SidebarContent = ({ left }) => {
                           />
                         ) : (
                           <LensOutlined
-                            style={{
+                            sx={{
                               fontSize: "xx-small",
                               marginLeft: "4px",
                               opacity: ".75",

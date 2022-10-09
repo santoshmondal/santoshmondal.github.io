@@ -43,12 +43,12 @@ const dataSlice = createSlice({
         left: true,
         subItemList: [
           { subtitle: "Java", rating: 5, icon: "fab fa-java" },
-          { subtitle: "NodeJS", rating: 5, icon: "fab fa-node" },
+          { subtitle: "Node", rating: 5, icon: "fab fa-node" },
           { subtitle: "TypeScript", rating: 5, icon: "fab fa-tumblr" },
           { subtitle: "Spring Boot", rating: 5, icon: "fas fa-leaf" },
           {
             subtitle: "MicroServices",
-            rating: 4,
+            rating: 5,
             icon: "fas fa-network-wired",
           },
           { subtitle: "Python", rating: 3, icon: "fab fa-python" },
@@ -80,7 +80,7 @@ const dataSlice = createSlice({
           { subtitle: "React", rating: 5, icon: "fab fa-react" },
           { subtitle: "Redux", rating: 5, icon: "fab fa-react" },
           { subtitle: "Anglar", rating: 4, icon: "fab fa-angular" },
-          { subtitle: "Vue", rating: 3, icon: "fab fa-vuejs" },
+          { subtitle: "Vue", rating: 4, icon: "fab fa-vuejs" },
         ],
       },
       {
@@ -101,7 +101,7 @@ const dataSlice = createSlice({
             iconText: "M",
           },
           { subtitle: "Bootstrap", rating: 5, icon: "fab fa-bootstrap" },
-          { subtitle: "Tailwind", rating: 4, icon: "fab fa-tumblr" },
+          { subtitle: "Tailwind", rating: 5, icon: "fab fa-tumblr" },
         ],
       },
       {

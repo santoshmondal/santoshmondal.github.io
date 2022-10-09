@@ -30,7 +30,7 @@ export const ProfileSumaryContent = () => {
 
       <Box
         textAlign="justify"
-        style={{ opacity: 0.9 }}
+        sx={{ opacity: 0.9 }}
         p={1}
         borderRadius={4}
         bgcolor="background.paper"
@@ -98,12 +98,7 @@ const CommonListBodyContent = ({ refItem }) => {
             {[...refItem.list].map((item, index) => (
               <ListItem button key={index}>
                 <ListItemIcon>
-                  <StarIcon
-                    style={{
-                      fontSize: "large",
-                      color: theme.palette.text.primary,
-                    }}
-                  />
+                  <StarIcon sx={{ fontSize: "large" }} />
                 </ListItemIcon>
                 <ListItemText primary={item.title} />
               </ListItem>

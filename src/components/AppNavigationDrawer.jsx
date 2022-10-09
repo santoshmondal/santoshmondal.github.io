@@ -20,7 +20,7 @@ import PhoneIphoneRoundedIcon from "@mui/icons-material/PhoneIphoneRounded";
 const AppNavigationDrawer = () => {
   const theme = useTheme();
   const dispatch = useDispatch();
-  let { apputilStore } = useSelector((state) => state);
+  let { dataStore } = useSelector((state) => state);
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -39,13 +39,13 @@ const AppNavigationDrawer = () => {
 
     switch (linkType) {
       case 1:
-        elink = appState.githubUrl;
+        elink = dataStore.connect.githubUrl;
         break;
       case 2:
-        elink = appState.linkedinUrl;
+        elink = dataStore.connect.linkedinUrl;
         break;
       case 3:
-        elink = appState.mailTo;
+        elink = dataStore.connect.mailTo;
         break;
       default:
         break;

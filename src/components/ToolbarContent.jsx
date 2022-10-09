@@ -27,13 +27,13 @@ const ToolbarContent = () => {
 
     switch (linkType) {
       case 1:
-        elink = appState.githubUrl;
+        elink = dataStore.connect.githubUrl;
         break;
       case 2:
-        elink = appState.linkedinUrl;
+        elink = dataStore.connect.linkedinUrl;
         break;
       case 3:
-        elink = appState.mailTo;
+        elink = dataStore.connect.mailTo;
         break;
       default:
         break;
