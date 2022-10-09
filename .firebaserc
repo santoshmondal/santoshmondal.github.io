@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "santooindian"
+  },
+  "targets": {
+    "santooindian": {
+      "hosting": {
+        "santoshmondal": [
+          "santoshmondal"
+        ],
+        "santooindian": [
+          "santooindian"
+        ]
+      }
+    }
+  }
+}
