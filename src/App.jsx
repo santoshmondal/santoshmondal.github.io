@@ -14,6 +14,7 @@ import TestScroll from "./components/TestScroll";
 import { toggleDrawerAction } from "./store/apputil.slice";
 import AppNavigationDrawer from "./components/AppNavigationDrawer";
 import React from "react";
+import ToolbarContent from "./components/ToolbarContent";
 
 function App(props) {
   const dispatch = useDispatch();
@@ -42,8 +43,10 @@ function App(props) {
         <AppNavigationDrawer />
       </SwipeableDrawer>
 
-      <AppBar>
-        <Toolbar></Toolbar>
+      <AppBar position="static">
+        <Toolbar>
+          <ToolbarContent />
+        </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
 

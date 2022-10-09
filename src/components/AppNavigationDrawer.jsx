@@ -1,6 +1,7 @@
 import { useTheme } from "@emotion/react";
 import {
   Box,
+  Icon,
   List,
   ListItem,
   ListItemButton,
@@ -76,14 +77,14 @@ const AppNavigationDrawer = () => {
 
           <ListItemButton onClick={(e) => openExternalLink(1)}>
             <ListItemIcon>
-              <MailRoundedIcon />
+              <Icon className="fab fa-github" />
             </ListItemIcon>
             <ListItemText primary={"Github Profile"} />
           </ListItemButton>
 
           <ListItemButton onClick={(e) => openExternalLink(2)}>
             <ListItemIcon>
-              <MailRoundedIcon />
+              <Icon className="fab fa-linkedin" />
             </ListItemIcon>
             <ListItemText primary={"LinkedIn Profile"} />
           </ListItemButton>
