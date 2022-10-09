@@ -1,8 +1,15 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
 
 const TestScroll = () => {
+  const { dataStore } = useSelector((state) => state);
+
   return (
     <Box>
+      <Typography variant="h3">{dataStore.title}</Typography>
+      <Typography variant="h5">{dataStore.message}</Typography>
+      <Divider />
+
       <Typography variant="body1" fontSize={21}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore odio
         aliquid minima commodi similique aspernatur quos, provident, quam quod
