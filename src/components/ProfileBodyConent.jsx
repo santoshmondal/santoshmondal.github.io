@@ -51,9 +51,15 @@ export const ProfileBodyContent = () => {
         <Accordion key={index}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Box>
-              <Typography>{item.etitle}</Typography>
-              <Typography>{item.esubtitle2}</Typography>
-              <Typography>{item.esubtitle1}</Typography>
+              <Typography variant="body1" fontSize={18}>
+                {item.etitle}
+              </Typography>
+              <Typography variant="subtitle1" fontSize={12}>
+                {item.esubtitle2}
+              </Typography>
+              <Typography variant="subtitle2" fontSize={12}>
+                {item.esubtitle1}
+              </Typography>
             </Box>
           </AccordionSummary>
           <AccordionDetails>
@@ -90,7 +96,7 @@ const CommonListBodyContent = ({ refItem }) => {
         <Paper>
           <List component="nav" aria-label="contacts" dense={true}>
             {[...refItem.list].map((item, index) => (
-              <ListItem button key={index}>
+              <ListItem button key={index} disableRipple>
                 <ListItemIcon>
                   <StarIcon sx={{ fontSize: "large" }} />
                 </ListItemIcon>
