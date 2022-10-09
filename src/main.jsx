@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 import { RouterProvider } from "react-router-dom";
 import { Provider, useSelector } from "react-redux";
 
@@ -12,6 +12,7 @@ import "@fontsource/roboto/700.css";
 
 import store from "./store/store";
 import { darkTheme, lightTheme, router } from "./app.init";
+import { CssBaseline } from "@mui/material";
 
 const MyThemeProvider = (props) => {
   const { apputilStore } = useSelector((state) => state);
