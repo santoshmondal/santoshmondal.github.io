@@ -15,6 +15,11 @@ import { toggleDrawerAction } from "./store/apputil.slice";
 import AppNavigationDrawer from "./components/AppNavigationDrawer";
 import React from "react";
 import ToolbarContent from "./components/ToolbarContent";
+import {
+  ProfileBodyContent,
+  ProfileBodyContent1,
+  ProfileSumaryContent,
+} from "./components/ProfileBodyConent";
 
 function App(props) {
   const dispatch = useDispatch();
@@ -56,9 +61,9 @@ function App(props) {
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
 
-      <Button onClick={() => dispatch(toggleDrawerAction(true))}>Drawer</Button>
-
-      <TestScroll />
+      <ProfileSumaryContent />
+      <ProfileBodyContent />
+      <ProfileBodyContent1 />
 
       <ScrollTop {...props}>
         <Fab size="small" aria-label="scroll back to top">
