@@ -8,8 +8,8 @@ const dataSlice = createSlice({
     message: "Data Slice - React Redux",
   },
   reducers: {
-    toggleDrawerAction: (state) => {
-      state.drawerOpen = !state.drawerOpen;
+    toggleDrawerAction: (state, action) => {
+      state.drawerOpen = action.payload;
     },
   },
 });

@@ -47,7 +47,7 @@ function App(props) {
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
 
-      <Button onClick={() => dispatch(toggleDrawerAction())}>Drawer</Button>
+      <Button onClick={() => dispatch(toggleDrawerAction(true))}>Drawer</Button>
 
       <TestScroll />
 
