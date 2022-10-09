@@ -8,7 +8,7 @@ import React from "react";
 
 export const SidebarContent = ({ left }) => {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("sm"));
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
   const { dataStore } = useSelector((state) => state);
 
   return (
@@ -20,7 +20,7 @@ export const SidebarContent = ({ left }) => {
         maxHeight: left && matches ? "calc(100vh - 100px)" : "inherit",
         position: left && matches ? "fixed" : "inherit",
         overflow: left && matches ? "auto" : "inherit",
-        width: left && matches ? "25%" : "inherit",
+        width: left && matches ? "25%" : "100%",
       }}
     >
       {/** SKILLS LIST */}

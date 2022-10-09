@@ -65,55 +65,39 @@ function App(props) {
           <ToolbarContent />
         </Toolbar>
       </AppBar>
-      <Toolbar id="back-to-top-anchor" />
+      <div id="back-to-top-anchor" />
 
       <Grid container>
-        {/** Body Content for Small Device */}
+        {/** Hidden In Large Screen */}
         <Hidden mdUp>
           <Grid xs={12}>
             <ProfileSumaryContent />
             <ProfileBodyContent1 />
             <ProfileBodyContent />
           </Grid>
+          <Grid xs={12}>
+            <SidebarContent left={true} />
+          </Grid>
+          <Grid xs={12}>
+            <SidebarContent />
+          </Grid>
         </Hidden>
 
-        {/* Common : Left Body Content */}
-        <Grid
-          xs={12}
-          md={3}
-          style={{
-            backgroundColor: theme.palette.background.default,
-            borderRight:
-              theme.palette.type === "dark"
-                ? "1px solid rgba(255, 255, 255, 0.075)"
-                : "1px solid rgba(0, 0, 0, 0.075)",
-          }}
-        >
-          <SidebarContent left={true} />
-        </Grid>
-
-        {/* Body Content For Medium and Large Device */}
-        <Hidden smDown>
+        {/* Hidden In Smaller Screen */}
+        <Hidden mdDown>
+          <Grid xs={12} md={3}>
+            <SidebarContent left={true} />
+          </Grid>
           <Grid xs={12} md={6}>
             <ProfileSumaryContent />
             <ProfileBodyContent1 />
             <ProfileBodyContent />
           </Grid>
+          <Grid xs={12} md={3}>
+            <SidebarContent />
+          </Grid>
         </Hidden>
       </Grid>
-
-      {/* Common- Right  Content */}
-      <Grid xs={12} md={3}>
-        <SidebarContent />
-      </Grid>
-
-      {/** Body Content for Small Device */}
-      <Hidden xsUp>
-        <Grid xs={12}>
-          <ProfileBodyContent1 />
-          <ProfileBodyContent />
-        </Grid>
-      </Hidden>
 
       <ScrollTop {...props}>
         <Fab size="small" aria-label="scroll back to top">
