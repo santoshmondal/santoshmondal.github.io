@@ -1069,6 +1069,11 @@
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.15.10.tgz#78a42897c2cf8db9fd5f1811f7590393b77774c7"
   integrity sha512-w0Ou3Z83LOYEkwaui2M8VwIp+nLi/NA60lBLMvaJ+vXVMcsARYdEzLNE7RSm4+lSg4zq4d7fAVuzk7PNQ5JFgg==
 
+"@fontsource/gabriela@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/gabriela/-/gabriela-4.5.10.tgz#16f32f5902f93230ac78db49fb792f1751d055d1"
+  integrity sha512-cua6VKdaWzzhwZMAkIIX2/K2hxpM0FoInH0Q3JOt2Hgim0xtM/RgeAN+JVABxfwp8TA0DA8YQ0rPlvJS5X5zmw==
+
 "@fontsource/roboto@^4.5.8":
   version "4.5.8"
   resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-4.5.8.tgz#56347764786079838faf43f0eeda22dd7328437f"
