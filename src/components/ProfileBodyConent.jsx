@@ -24,15 +24,17 @@ export const ProfileSumaryContent = () => {
 
   return (
     <Box p={2} px={2} pb={1}>
-      <Box fontWeight="bold">
-        <Typography variant="h6">{dataStore.profile.title}</Typography>
-      </Box>
+      <Paper sx={{ p: 2 }}>
+        <Box fontWeight="bold">
+          <Typography variant="h6">{dataStore.profile.title}</Typography>
+        </Box>
 
-      <Box textAlign="justify" sx={{ opacity: 0.9 }} pt={1} borderRadius={4}>
-        <Typography fontFamily={"fontPrimary"}>
-          {dataStore.profile.summary}
-        </Typography>
-      </Box>
+        <Box textAlign="justify" sx={{ opacity: 0.9 }} pt={1} borderRadius={4}>
+          <Typography fontFamily={""} fontSize={{ xs: 18 }}>
+            {dataStore.profile.summary}
+          </Typography>
+        </Box>
+      </Paper>
     </Box>
   );
 };

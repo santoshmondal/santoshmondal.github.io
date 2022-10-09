@@ -1,8 +1,10 @@
 import {
   AppBar,
+  Box,
   Button,
   Fab,
   Hidden,
+  Paper,
   SwipeableDrawer,
   Toolbar,
   Typography,

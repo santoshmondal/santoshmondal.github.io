@@ -23,7 +23,7 @@ const WelcomeSnackbar = () => {
       <Snackbar
         anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         open={open}
-        autoHideDuration={6000}
+        autoHideDuration={5000}
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity="info" icon={false}>
