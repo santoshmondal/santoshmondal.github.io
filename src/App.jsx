@@ -11,13 +11,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 import ScrollTop from "./components/ScrollTop";
 import TestScroll from "./components/TestScroll";
-import { toggleDrawerAction } from "./store/data.slice";
+import { toggleDrawerAction } from "./store/apputil.slice";
 import AppNavigationDrawer from "./components/AppNavigationDrawer";
 import React from "react";
 
 function App(props) {
   const dispatch = useDispatch();
-  const { dataStore } = useSelector((state) => state);
+  const { apputilStore } = useSelector((state) => state);
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -35,7 +35,7 @@ function App(props) {
     <React.Fragment>
       <SwipeableDrawer
         anchor="left"
-        open={dataStore.drawerOpen}
+        open={apputilStore.drawerOpen}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
       >

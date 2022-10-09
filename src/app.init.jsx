@@ -6,7 +6,7 @@ import App from "./App";
 import ErrorPage from "./components/ErrorPage";
 
 // ------------ Theme SETUP -------------
-let theme = createTheme({
+let darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: amber,
@@ -16,7 +16,19 @@ let theme = createTheme({
   },
 });
 
-theme = responsiveFontSizes(theme);
+darkTheme = responsiveFontSizes(darkTheme);
+
+let lightTheme = createTheme({
+  palette: {
+    mode: "light",
+    primary: amber,
+  },
+  typography: {
+    fontPrimary: "gabriela",
+  },
+});
+
+lightTheme = responsiveFontSizes(lightTheme);
 
 // ------------ ROUTER SETUP -------------
 const router = createBrowserRouter([
@@ -28,4 +40,4 @@ const router = createBrowserRouter([
 ]);
 
 // Finally Export
-export { theme, router };
+export { darkTheme, lightTheme, router };
