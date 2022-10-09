@@ -43,7 +43,7 @@ function App(props) {
         <AppNavigationDrawer />
       </SwipeableDrawer>
 
-      <AppBar position="static">
+      <AppBar position="sticky">
         <Toolbar>
           <ToolbarContent />
         </Toolbar>
