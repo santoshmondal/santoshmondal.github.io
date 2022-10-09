@@ -30,7 +30,7 @@ export const ProfileSumaryContent = () => {
         </Box>
 
         <Box textAlign="justify" sx={{ opacity: 0.9 }} pt={1} borderRadius={4}>
-          <Typography fontFamily={""} fontSize={{ xs: 18 }}>
+          <Typography fontFamily={""} fontSize={{ xs: 14, sm: 16 }}>
             {dataStore.profile.summary}
           </Typography>
         </Box>
