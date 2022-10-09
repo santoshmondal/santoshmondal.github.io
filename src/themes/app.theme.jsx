@@ -3,7 +3,7 @@ import { amber } from "@mui/material/colors";
 
 let theme = createTheme({
   palette: {
-    mode: "light",
+    mode: "dark",
     primary: amber,
   },
   typography: {

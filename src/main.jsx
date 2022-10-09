@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import "./index.css";
 import "@fontsource/roboto/300.css";
@@ -12,9 +12,11 @@ import App from "./App";
 import theme from "./themes/app.theme";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <React.Fragment>
     <ThemeProvider theme={theme}>
+      <CssBaseline />
+
       <App />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.Fragment>
 );
