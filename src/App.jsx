@@ -20,6 +20,7 @@ import {
   ProfileBodyContent1,
   ProfileSumaryContent,
 } from "./components/ProfileBodyConent";
+import { SidebarContent } from "./components/SidebarContent";
 
 function App(props) {
   const dispatch = useDispatch();
@@ -61,6 +62,7 @@ function App(props) {
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
 
+      <SidebarContent left={true} />
       <ProfileSumaryContent />
       <ProfileBodyContent />
       <ProfileBodyContent1 />
