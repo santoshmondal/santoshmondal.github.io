@@ -9,7 +9,7 @@ const dataSlice = createSlice({
     landingTitle: "Landing page title",
     username: "Santosh Kumar Mondal",
     designation: "Senior Software Architect",
-    headerRow3: "Microservices/Kafka/ELK/Web3",
+    headerRow3: "MicroServices/Kafka/ELK/Web3",
 
     connect: {
       githubUrl: "https://github.com/santoshmondal",
