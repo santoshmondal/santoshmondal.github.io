@@ -8,8 +8,8 @@ const dataSlice = createSlice({
     message: "Work in Progress...!",
     landingTitle: "Landing page title",
     username: "Santosh Kumar Mondal",
-    designation: "Founder / Product Architect",
-    headerRow3: "Blockchain Enthusiast",
+    designation: "Senior Software Architect",
+    headerRow3: "Microservices/Kafka/ELK/Web3",
 
     connect: {
       githubUrl: "https://github.com/santoshmondal",
@@ -116,23 +116,23 @@ const dataSlice = createSlice({
     ],
     profile: {
       title: "PROFESSIONAL SUMMARY",
-      summary: `Passionate Software Architect and Founder of two company, ${
+      summary: `Senior Software Architect and Founder of two company, ${
         new Date().getFullYear() - 2006
       }+ years of experience in building robust and highly scalable applications across the E-commerce, Sports, Education, Law, Electronic Payment Domain. With strong expertise in customer collaboration, requirement analysis, high level design and development using frontend and backend technologies.`,
       employment: {
         title: "Employment History",
         list: [
-          /*{
+          {
             id: 0,
             etitle: "Verifone",
-            esubtitle1: "Senior Architect",
-            esubtitle2: "July 2021 - Present",
-          },*/
+            esubtitle1: "Senior Software Architect",
+            esubtitle2: "Jun 2021 - Present",
+          },
           {
             id: 1,
             etitle: "Koderoom.Tech",
             esubtitle1: "Founder",
-            esubtitle2: "Mar 2019 - Present",
+            esubtitle2: "Mar 2019 - Jun 2021",
           },
           {
             id: 2,
